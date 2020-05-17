@@ -1,10 +1,21 @@
 import React from 'react';
 import testData from './testData';
-console.log("testData", testData);
 function Home() {
     return (
         <div className="Home">
             <div>
+                {/* Preloader Start */}
+                <div id="preloader-active">
+                    <div className="preloader d-flex align-items-center justify-content-center">
+                        <div className="preloader-inner position-relative">
+                            <div className="preloader-circle" />
+                            <div className="preloader-img pere-text">
+                                <img src="img/logo/logo.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Preloader Start */}
                 <header>
                     {/* Header Start */}
                     <div className="header-area">
@@ -52,7 +63,7 @@ function Home() {
                                     <div className="row align-items-center">
                                         <div className="col-xl-10 col-lg-10 col-md-12 header-flex">
                                             {/* sticky */}
-                                            <div className="sticky-logo">
+                                            <div className="sticky-logo info-open">
                                                 <a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
                                             </div>
                                             {/* Main-menu */}
@@ -222,16 +233,16 @@ function Home() {
                                     <div className="col-12">
                                         <div className="row weekly-news-active dot-style d-flex dot-style">
                                             {
-                                               testData.map(x=>  <div className="weekly-single col-md-4 mx-0" key={x._id}>
-                                                <div className="weekly-img">
-                                                    <img src={x.thumb_art} alt="" />
-                                                </div>
-                                                <div className="weekly-caption">
-                                                    <span className="color1">Strike</span>
-                                                    <h4><a href="/">{x.title}</a></h4>
-                                                </div>
-                                            </div>)
-                                            } 
+                                                testData.map(x => <div className="weekly-single col-md-4 mx-0" key={x._id}>
+                                                    <div className="weekly-img">
+                                                        <img src={x.thumb_art} alt="" />
+                                                    </div>
+                                                    <div className="weekly-caption">
+                                                        <span className="color1">Strike</span>
+                                                        <h4><a href="/">{x.title}</a></h4>
+                                                    </div>
+                                                </div>)
+                                            }
                                         </div>
                                     </div>
                                 </div>

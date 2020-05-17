@@ -12,14 +12,16 @@
 
 /* 2. slick Nav */
 // mobile_menu
-    var menu = $('ul#navigation');
-    if(menu.length){
-      menu.slicknav({
-        prependTo: ".mobile_menu",
-        closedSymbol: '+',
-        openedSymbol:'-'
-      });
-    };
+    $(window).on('load', function(){
+      var menu = $('ul#navigation');
+      if(menu.length){
+        menu.slicknav({
+          prependTo: ".mobile_menu",
+          closedSymbol: '+',
+          openedSymbol:'-'
+        });
+      };
+    })
 
 // Weekly-2 Acticve
     $('.weekly-news-active').slick({
