@@ -2567,7 +2567,7 @@ hr {
 .main-header .main-menu ul li a {
   color: #002e5b;
   font-weight: 500;
-  padding: 40px 40px 40px 0;
+  padding: 39px 19px;
   display: block;
   font-size: 14px;
   transition: all 0.3s ease-out 0s;
@@ -2575,12 +2575,12 @@ hr {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .main-header .main-menu ul li a {
-    padding: 40px 40px 40px 0;
+    padding: 39px 15px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .main-header .main-menu ul li a {
-    padding: 20px 30px 20px 0;
+    padding: 20px 15px;
   }
 }
 .main-header .main-menu ul li:hover > a {
