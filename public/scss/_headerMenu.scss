@@ -70,7 +70,7 @@
     // Bottom
     .header-bottom{
         border-top: 1px solid#eeeeee;
-        box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
         @media #{$sm}{
             border-top: 0;
         }
@@ -78,15 +78,15 @@
             border-top: 0;
         }
         //Mobile Menu
-        // @media #{$md}{
-        //     padding: 22px 50px;
-        //  }
-        // @media #{$sm}{
-        //     padding: 10px 0px;
-        //  }
-        // @media #{$xs}{
-        //     padding: 10px 10px;
-        //  }
+        @media #{$md}{
+            padding: 22px 50px;
+         }
+        @media #{$sm}{
+            padding: 10px 0px;
+         }
+        @media #{$xs}{
+            padding: 10px 10px;
+         }
     }
     // Search box
         .header-right-btn {
@@ -131,7 +131,6 @@
             opacity: 1;
             transition: .3s;
             input{
-               
                 right: 37px;
             }
         }
@@ -154,12 +153,12 @@
                 & a{
                     color: #002e5b;
                     font-weight: 500;
-                    padding: 39px 19px;
+                    padding: 40px 40px 40px 0;
                     @media #{$lg}{
-                        padding: 39px 15px;
+                        padding: 40px 40px 40px 0;
                     }
                     @media #{$md}{
-                        padding: 20px 15px;
+                        padding: 20px 30px 20px 0;
                     }
                     display: block;
                     font-size: 14px;

@@ -810,7 +810,7 @@ function Home() {
                                         <div className="single-footer-caption">
                                             {/* logo */}
                                             <div className="footer-logo">
-                                                <a href="index.html"><img src="img/logo/logo2_footer.png" alt="" /></a>
+                                                <a href="index.html"><img src="img/logo/logo-footer.png" alt="" /></a>
                                             </div>
                                             <div className="footer-tittle">
                                                 <div className="footer-pera">
