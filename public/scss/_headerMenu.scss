@@ -16,13 +16,12 @@
         .header-info-left{
             ul{
                 li{
-                    color:#fff;
+                    color: $white;
                     display: inline-block;
-                    margin-right: 56px;
                     font-family: $font_1;
-                    font-size: 12px;
-                    &:last-child{
-                        margin-right: 0px;
+                    font-size: 14px;
+                    &:first-child{
+                        margin-right: 1rem;
                     }
                     img{
                        margin-right: 8px;
@@ -35,7 +34,7 @@
                 li{
                     display: inline-block;
                     & a{
-                        color:#fff;
+                        color: $white;
                         font-size: 13px;
                         padding-left: 17px;
                         &:hover{
@@ -48,29 +47,24 @@
     }
     // Mid
     .header-mid{
-        padding: 9px 0px;
-        background:#fff;
+        padding: 10px 0px;
+        background: $white;
         position: relative;
-        .logo{
-            img{
-                @media #{$lg}{
-                    width: 100%;
-                } 
-                @media #{$md}{
-                    width: 100%;
-                }
-            }
-        }
-        .header-banner{
-            img{
-                width: 100%;
-            }
-        }
+        border-bottom-color: #eeeeee !important;
+        // .logo{
+        //     img{
+        //         @media #{$lg}{
+        //             width: 100%;
+        //         } 
+        //         @media #{$md}{
+        //             width: 100%;
+        //         }
+        //     }
+        // }
     }
     // Bottom
     .header-bottom{
-        border-top: 1px solid#eeeeee;
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.1);
         @media #{$sm}{
             border-top: 0;
         }
@@ -78,15 +72,15 @@
             border-top: 0;
         }
         //Mobile Menu
-        @media #{$md}{
-            padding: 22px 50px;
-         }
+        // @media #{$md}{
+        //     padding: 22px 50px;
+        // }
         @media #{$sm}{
             padding: 10px 0px;
-         }
+        }
         @media #{$xs}{
-            padding: 10px 10px;
-         }
+            padding: 10px 0px;
+        }
     }
     // Search box
         .header-right-btn {
@@ -106,7 +100,7 @@
         }
         .search-box input {
             position: relative;
-            border: 1px solid#ddd;
+            border: 1px solid #ddd;
             padding-left: 10px;
             color:#000;
             width: 189px;
@@ -153,15 +147,10 @@
                 & a{
                     color: #002e5b;
                     font-weight: 500;
-                    padding: 40px 40px 40px 0;
-                    @media #{$lg}{
-                        padding: 40px 40px 40px 0;
-                    }
-                    @media #{$md}{
-                        padding: 20px 30px 20px 0;
-                    }
+                    margin-top: -2px;
+                    padding: 1rem 1rem 1rem 0;
                     display: block;
-                    font-size: 14px;
+                    font-size: .875rem;
                     @include transition(.3s);
                     text-transform: capitalize;
                 }
@@ -170,11 +159,32 @@
                         color:$theme-color;
                     }
                 }
+                &:first-child {
+                    a i {
+                        font-size: 12px;
+                        padding: .563rem .516rem;
+                        border-radius: 50%;
+                    }
+                    a:not(:hover) {
+                        i {
+                            color: #4f4f4f;
+                            background-color: #e5e5e5;
+                            @include transition(.3s);
+                        }
+                    }
+                    a:hover {
+                        i {
+                            color: $white;
+                            background-color: $theme-color;
+                            @include transition(.3s);
+                        }
+                    }
+                }
             }
             & ul.submenu{
                 position: absolute;
                 width: 170px;
-                background: #fff;
+                background: $white;
                 left: 0;
                 top: 120%;
                 visibility: hidden;
@@ -196,7 +206,7 @@
                             background: none;
                         }
                         & i{
-                            // @include transition(.4s);
+                            @include transition(.4s);
                         }
                     }
                 } 
@@ -231,25 +241,33 @@
  
 
 // header Sticky Responsive
-.header-sticky ul li a {
-	padding: 10px 19px;
-}
-.header-sticky.sticky-bar.sticky .main-menu ul>li>a {
-    padding: 33px 15px;
-    @media #{$md}{
-        padding: 33px 13px;
+.header-sticky {
+    ul li a {
+        padding: .625rem 0;
     }
-}
-.header-sticky.sticky-bar.sticky .header-flex{
-    justify-content: space-between;
+    &.sticky-bar.sticky {
+        .header-flex{
+            justify-content: space-between;
+        }
+        .main-menu {
+            ul>li {
+                >a {
+                    padding: 1.25rem 1rem;
+                }
+                &:first-child {
+                    display: none;
+                }
+            }
+            .submenu {
+                @media #{$md}{
+                    right: 0;
+                    left: inherit;
+                }
+            }
+        }
+    }
 }
 
-.header-sticky.sticky-bar.sticky .main-menu .submenu{
-    @media #{$md}{
-        right: 0;
-        left: inherit;
-    }
-}
 .slicknav_menu .slicknav_icon-bar {
 	background-color: $theme-color !important;
 }
@@ -264,22 +282,34 @@
         }
     }
     .header-area .slicknav_btn {
-        top: -51px;
-        right: 17px;
-    }
-    .slicknav_menu .slicknav_nav a:hover {
-        background: transparent;
-        color: $theme-color;
-    }
-    .slicknav_menu {
-        background: transparent;
-        margin-top: -6px !important;
+        top: -50px;
     }
     .mobile_menu {
         position: absolute;
         right: 0px;
         width: 100%;
         z-index: 99;
+        .slicknav_menu {
+            background: transparent;
+            margin-top: -6px !important;
+
+            .slicknav_icon {
+                margin-top: 4px;
+                right: 6px;
+            }
+
+            .slicknav_nav {
+                padding: 0 15px 10px 15px;
+                box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.1);
+                a {
+                    margin: 0;
+                    &:hover {
+                        background: transparent;
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
     }
 
 
@@ -303,5 +333,5 @@
 
 
 .sticky-logo.info-open {
-	padding: 12px;
+	padding: 12px 0px;
 }

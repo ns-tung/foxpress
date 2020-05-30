@@ -628,8 +628,8 @@ hr {
 	}
 
 	.preloader .preloader-circle {
-		width: 100px;
-		height: 100px;
+		width: 200px;
+		height: 200px;
 		position: relative;
 		border-style: solid;
 		border-width: 3px;
@@ -663,14 +663,13 @@ hr {
 		-webkit-transform: translateY(-50%);
 		-ms-transform: translateY(-50%);
 		transform: translateY(-50%);
-		padding-top: 6px;
 		-webkit-transition: .6s;
 		-o-transition: .6s;
 		transition: .6s;
 	}
 
 	.preloader .preloader-img img {
-		max-width: 55px;
+		max-width: 150px;
 	}
 	.preloader .pere-text strong{
 		font-weight: 800;
