@@ -318,7 +318,7 @@
 $('.sticky-logo').addClass('info-open');
 
 
-// Remove clas
+// Remove class
 $('.close-icon').click(function(){
   $('.extra-inofo-bar').removeClass('info-open');
 })

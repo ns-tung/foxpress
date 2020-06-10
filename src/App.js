@@ -1,12 +1,17 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
-import Home from './components/Home/Home';
+import HomeContainer from './components/Home/HomeContainer'
+import PreloaderContainer from './components/Preloader/PreloaderContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
+import FooterContainer from './components/Footer/FooterContainer';
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <PreloaderContainer />
+      <HeaderContainer />
+      <HomeContainer />
+      <FooterContainer />
     </div>
   );
 }
