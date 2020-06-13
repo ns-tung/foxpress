@@ -1,8 +1,8 @@
 @import 'color';
 
 // Font Family
-$font_1 :'Roboto', sans-serif;
-$font_2 :'Roboto', sans-serif;
+$font_1 :'Maven Pro', sans-serif;
+$font_2 :'Maven Pro', sans-serif;
 
 $heading_color2: #000;
 $white_color:#fff;
@@ -21,8 +21,8 @@ $white_color:#fff;
 $laptop: 'only screen and (min-width: 1200px) and (max-width: 1600px)';
 $lg :'only screen and (min-width: 992px) and (max-width: 1199px)';
 $md:'only screen and (min-width: 768px) and (max-width: 991px)';
-$xs:'(max-width: 767px)';
 $sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
+$xs:'(max-width: 575px)';
 
 // Extra Responsive
 
