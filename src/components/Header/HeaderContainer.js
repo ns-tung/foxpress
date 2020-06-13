@@ -45,15 +45,15 @@ function HeaderContainer() {
                 <div className="header-bottom border-bottom header-sticky">
                     <div className="container">
                         <div className="row align-items-center">
-                            <div className="col-xl-9 col-lg-9 col-md-8 header-flex align-items-center">
+                            <div className="col-md-9 col-lg-8  header-flex">
                                 {/* sticky */}
-                                <div className="sticky-logo info-open">
-                                    <a href="/"><img className="img-fluid" src="img/logo/logo.png" alt="" /></a>
+                                <div className="sticky-logo w-100 info-open">
+                                    <a href="/"><img className="img-fluid w-25" src="img/logo/logo.png" alt="" /></a>
                                 </div>
                                 {/* Main-menu */}
                                 <div className="main-menu d-none d-md-block">
                                     <nav>
-                                        <ul id="navigation" className="d-flex align-items-center">
+                                        <ul id="navigation" class="d-flex align-items-center">
                                             <li>
                                                 <a className="m-0" href="/">
                                                     <i className="far fa-home-lg-alt" />
@@ -77,7 +77,7 @@ function HeaderContainer() {
                                     </nav>
                                 </div>
                             </div>
-                            <div className="col-xl-3 col-lg-3 col-md-4 d-none d-md-block">
+                            <div className="col-md-3 col-lg-4  d-none d-md-block">
                                 <div className="header-right-btn">
                                     <div className="search-box">
                                         <form action="#">
@@ -88,7 +88,7 @@ function HeaderContainer() {
                                 </div>
                             </div>
                             {/* Mobile Menu */}
-                            <div className="col-12">
+                            <div className="col d-block">
                                 <div className="mobile_menu d-block d-md-none" />
                             </div>
                         </div>
