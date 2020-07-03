@@ -28,7 +28,7 @@ function FooterContainer() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-3 col-lg-3 col-md-4  col-sm-6">
+                        <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                             <div className="single-footer-caption mt-60">
                                 <div className="footer-tittle">
                                     <h4>Newsletter</h4>
@@ -70,22 +70,22 @@ function FooterContainer() {
             </div>
             {/* footer-bottom aera */}
             <div className="footer-bottom-area">
-                <div className="container">
-                    <div className="footer-border">
-                        <div className="row align-items-center justify-content-between">
-                            <div className="col-lg-6">
-                                <div className="footer-copy-right">
-                                    <p>
+                <div className="footer-border">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-sm-6">
+                                <div className="footer-copy-right text-center text-md-left">
+                                    <p className="mb-3 m-md-0">
                                         {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
     
-                                        Copyright © All rights reserved | This template is made with <i className="fal fa-heart" /> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                        Made with <i className="fal fa-heart" /> by <a href="https://colorlib.com/wp/template/aznews/" target="_blank">Colorlib</a>
     
                                         {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                                     </p>
                                 </div>
                             </div>
-                            <div className="col-lg-6">
-                                <div className="footer-menu f-right">
+                            <div className="col-sm-6">
+                                <div className="footer-menu text-center text-md-right">
                                     <ul>
                                         <li><a href="/">Terms of use</a></li>
                                         <li><a href="/">Privacy Policy</a></li>

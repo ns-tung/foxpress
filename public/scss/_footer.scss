@@ -77,8 +77,8 @@
         & a{
            & i{
             color: #222222;
-            margin-right: 12px; 
-            font-size: 19px;
+            margin-right: 20px; 
+            font-size: 1rem;
             @include transition(.4s);
             &:hover{
                 color: $theme-color;
@@ -115,18 +115,17 @@
     background: #100f0f;
     .footer-border{
         border-top: 1px solid #242323;
-        padding: 40px 0px 23px;
-        @media #{$xs}{
-            padding: 35px 0px 20px;
-        }
+        padding: 20px 0px;
+        // @media #{$xs}{
+        //     padding: 35px 0px 20px;
+        // }
     }
     .footer-copy-right{
         & p{
             color: #838383;
             font-weight: 300;
-            font-size: 16px;
+            font-size: .875rem;
             line-height: 2;
-            margin-bottom: 12px;
             & i{
                 color:#f27420;
             }
@@ -141,42 +140,24 @@
     }
 }
 
-
 .footer-menu ul li {
     display: inline-block;
-    margin-left: 36px;
+    margin-left: 30px;
     &:first-child{
         margin-left: 0px;
     }
     @media #{$xs}{
-        margin-left: 17px;
+        margin-left: 20px;
     }
     a{
         color: #777777;
-        text-transform: uppercase;
-        font-size: 12px;
+        font-size: .875rem;
         font-weight: 500;
         &:hover{
             color: #f27420;
         }
     }
 }
-
-.footer-menu{
-
-    @media #{$md}{
-        float: left;
-    } 
-    @media #{$sm}{
-        float: left;
-    }
-    @media #{$xs}{
-        float: left;
-    }
-}
-
-
-
 
 // Pagination Area
 
@@ -188,7 +169,7 @@
     .page-link {
         color: #777777;
         border:0;
-        font-size: 15px;
+        font-size: 1rem;
         text-align: center;
         background: none;
         padding: 0 10px;
