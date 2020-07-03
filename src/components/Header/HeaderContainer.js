@@ -45,7 +45,7 @@ function HeaderContainer() {
                 <div className="header-bottom border-bottom header-sticky">
                     <div className="container">
                         <div className="row align-items-center">
-                            <div className="col-md-9 col-lg-8  header-flex">
+                            <div className="col-md-9 header-flex">
                                 {/* sticky */}
                                 <div className="sticky-logo w-100 info-open">
                                     <a href="/"><img className="img-fluid w-25" src="img/logo/logo.png" alt="" /></a>
@@ -77,7 +77,7 @@ function HeaderContainer() {
                                     </nav>
                                 </div>
                             </div>
-                            <div className="col-md-3 col-lg-4  d-none d-md-block">
+                            <div className="col-md-3 d-none d-md-block">
                                 <div className="header-right-btn">
                                     <div className="search-box">
                                         <form action="#">

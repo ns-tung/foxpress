@@ -1,14 +1,6 @@
 // Header left right padding
 .header-area {
-        // @media #{$md}{
-        //     box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
-        // }
-        // @media #{$sm}{
-        //     box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
-        // }
-        // @media #{$xs}{
-        //     box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
-        // }
+        
     // Top
     .header-top{
         padding: 8px 0px;
@@ -17,8 +9,8 @@
                 li{
                     color: $white;
                     display: inline-block;
-                    font-family: $font_1;
-                    font-size: 14px;
+                    font-family: $font_face;
+                    font-size: .875rem;
                     &:first-child{
                         margin-right: 1rem;
                     }
@@ -34,8 +26,8 @@
                     display: inline-block;
                     & a{
                         color: $white;
-                        font-size: 13px;
-                        padding-left: 17px;
+                        font-size: .875rem;
+                        padding-left: 20px;
                         &:hover{
                             color: $theme-color;
                         }
@@ -49,30 +41,18 @@
         padding: 10px 0px;
         background: $white;
         position: relative;
-        // .logo{
-        //     img{
-        //         @media #{$lg}{
-        //             width: 100%;
-        //         } 
-        //         @media #{$md}{
-        //             width: 100%;
-        //         }
-        //     }
-        // }
     }
     // Bottom
     .header-bottom{
-        // box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.1);
+        
         @media #{$sm}{
             border-top: 0;
         }
         @media #{$xs}{
             border-top: 0;
         }
+
         //Mobile Menu
-        // @media #{$md}{
-        //     padding: 22px 50px;
-        // }
         @media #{$sm}{
             padding: 10px 0px;
         }
@@ -80,6 +60,7 @@
             padding: 10px 0px;
         }
     }
+
     // Search box
     .header-right-btn {
         position: relative;
@@ -118,6 +99,7 @@
             right: 37px;
         }
     }
+    
     // Header Bottom
     .main-header{
         position: relative;
@@ -359,7 +341,7 @@
                 right: -15px !important;
             }
             &_nav {
-                top: -35px !important;
+                top: -34px !important;
             }
         }
     }
