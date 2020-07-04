@@ -78,7 +78,7 @@ function FooterContainer() {
                                     <p className="mb-3 m-md-0">
                                         {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
     
-                                        Made with <i className="fal fa-heart" /> by <a href="https://colorlib.com/wp/template/aznews/" target="_blank">Colorlib</a>
+                                        Made with <i className="fal fa-heart" /> by <a href="https://colorlib.com/wp/template/aznews/" target="_blank" rel="noopener noreferrer">Colorlib</a>
     
                                         {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                                     </p>
