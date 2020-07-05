@@ -13,7 +13,9 @@ class HomeContainer extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://45.76.179.13:4041/api/articles/Trangnhat?limit=4")
+        const https = require("https");
+        const agent = new https.Agent({ rejectUnauthorized: false })
+        fetch("http://45.76.179.13:4041/api/articles/Trangnhat?limit=4",{agent})
             .then(res => res.json())
             .then(
                 (result) => {
