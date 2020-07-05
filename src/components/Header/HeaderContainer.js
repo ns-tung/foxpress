@@ -53,7 +53,7 @@ function HeaderContainer() {
                                 {/* Main-menu */}
                                 <div className="main-menu d-none d-md-block">
                                     <nav>
-                                        <ul id="navigation" class="d-flex align-items-center">
+                                        <ul id="navigation" className="d-flex align-items-center">
                                             <li>
                                                 <a className="m-0" href="/">
                                                     <i className="far fa-home-lg-alt" />

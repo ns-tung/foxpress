@@ -1,6 +1,5 @@
 import React from 'react';
 function PostCardClassic (props) {
-    console.log(props);
     return (
         <div className="col-lg-4">
             <div className="single-bottom mb-35">
