@@ -37,6 +37,7 @@ class HomeContainer extends React.Component {
     }
 
     render() {
+        console.log(this.state.items&&this.state.items.length);
         return (
             <main className="my-5">
                 {/* Trending Area Start */}
@@ -59,7 +60,6 @@ class HomeContainer extends React.Component {
                                     <div className="trending-bottom">
                                         <div className="row">
                                             {
-                                                console.log(this.state.items&&this.state.items.length),
                                                 this.state.items && this.state.items.length ? this.state.items.map( e => <PostCardClassic key={e._id} post={e} />) : <div className="col"><p className="theme-color">No data posts</p></div>
                                             }
                                         </div>
