@@ -13,12 +13,12 @@ class HomeContainer extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://45.76.179.13:4043/api/articles/Trangnhat?limit=4")
+        fetch("https://45.76.179.13:4043/api/articles/Trangnhat?limit=5")
             .then(res => res.json())
             .then(
                 (result) => {
                     let listPost = [];
-                    listPost = result.data.articles.splice(1,4);
+                    listPost = result.data.articles.splice(1,5);
                     this.setState({
                         isLoaded: true,
                         items: listPost
@@ -37,7 +37,6 @@ class HomeContainer extends React.Component {
     }
 
     render() {
-        console.log(this.state.items&&this.state.items.length);
         return (
             <main className="my-5">
                 {/* Trending Area Start */}
@@ -496,11 +495,11 @@ class HomeContainer extends React.Component {
                             </div>
                             <div className="col-lg-4">
                                 {/* Section Tittle */}
-                                <div className="section-tittle mb-40">
+                                <div className="section-tittle mb-30">
                                     <h3>Follow Us</h3>
                                 </div>
                                 {/* Flow Socail */}
-                                <div className="single-follow mb-45">
+                                <div className="single-follow mb-30">
                                     <div className="single-box">
                                         <div className="follow-us d-flex align-items-center">
                                             <div className="follow-social">

@@ -37,7 +37,7 @@ function FooterContainer() {
                                     <div className="footer-form">
                                         <div id="mc_embed_signup">
                                             <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01" method="get" className="subscribe_form relative mail_part">
-                                                <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address" className="placeholder hide-on-focus" onFocus="this.placeholder = ''" onBlur="this.placeholder = ' Email Address '" />
+                                                <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address" className="placeholder hide-on-focus" />
                                                 <div className="form-icon">
                                                     <button type="submit" name="submit" id="newsletter-submit" className="email_icon newsletter-submit button-contactForm"><img src="img/logo/form-iocn.png" alt="" /></button>
                                                 </div>

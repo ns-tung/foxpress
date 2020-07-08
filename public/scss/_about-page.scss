@@ -1,13 +1,51 @@
 .about-area{
-    .about-right{
-        .about-img{
-            img{
-                width: 100%;
+    time {font-size: 0.875rem;}
+    .about-right {
+        span {
+            background:$white;
+            color: $heading-color;
+            padding: 9px 15px 9px 30px;
+            border: 1px solid $gray-color;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 1;
+            margin-bottom: 19px;
+            display: inline-block;
+            &::before {
+                position: absolute;
+                left: 24px;
+                top: 8px;
+                width: 14px;
+                height: 14px;
+                border-radius: 40px;
+                content: "";
+                background-color: $theme-color;
             }
         }
         .about-prea{
-            p{
-                font-size: 15px;
+            >ul, .list_link {display: none;}
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+            figcaption {
+                p {
+                    font-size: 14px;
+                    text-align: center;
+                }
+            }
+            p {
+                text-align: justify;
+                color: $black;
+                a {
+                    cursor: default;
+                    pointer-events: none;
+                    color: $black
+                }
             }
         }
     }
