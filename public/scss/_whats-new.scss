@@ -59,23 +59,19 @@
         // max-width: 50%;
         // flex-wrap: wrap;
         .follow-us{
-            border: 1px solid#f4f4f4;
-            padding-top: 10px;
-            padding-bottom: 15px;
-            padding-left: 13px;
-            padding-right: 13px;
-            border-radius: 5px;
-            margin-bottom: 5px;
-            width: 49%;
-            .follow-social{
-                a{
-                    i{
-
-                    }
-                }
-            }
+            border: 1px solid $gray-color;
+            padding: 9px 15px;
+            border-radius: 6px;
+            margin-bottom: 14px;
+            width: 48%;
+            // .follow-social{
+            //     a{
+            //         i{}
+            //     }
+            // }
             .follow-count{
                 padding-left: 15px;
+                margin-bottom: 6px;
                 span{
                     color:#232323;
                     font-size: 14px;
@@ -90,10 +86,7 @@
         }
     }
 .news-poster{
-    img{
-        width: 100%;
-        padding: 0 61px;
-    }
+    text-align: center;
 }
 
     // Tabs Button Style

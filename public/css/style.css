@@ -2739,20 +2739,11 @@ hr {
     left: 5px;
   }
 }
-.trending-area .trending-main .trending-top .trend-top-img .trend-top-cap ::before {
-  position: absolute;
-  left: 10px;
-  width: 10px;
-  height: 10px;
-  border-radius: 20px;
-  content: "";
-  background-color: #fd2952;
-}
 .trending-area .trending-main .trending-top .trend-top-img .trend-top-cap span {
-  background: #fff9c6;
+  background: #ffffff;
   color: #111111;
-  padding: 9px 20px 10px 30px;
-  border: 1px solid #f7f7fd;
+  padding: 9px 15px 9px 30px;
+  border: 1px solid #bebebe;
   border-radius: 20px;
   text-transform: uppercase;
   font-weight: 500;
@@ -2760,6 +2751,16 @@ hr {
   line-height: 1;
   margin-bottom: 19px;
   display: inline-block;
+}
+.trending-area .trending-main .trending-top .trend-top-img .trend-top-cap span::before {
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 40px;
+  content: "";
+  background-color: #fd2952;
 }
 .trending-area .trending-main .trending-top .trend-top-img .trend-top-cap h2 {
   font-size: 30px;
@@ -2779,20 +2780,33 @@ hr {
 }
 .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-img img {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 8px;
   transform: scale(1);
   transition: all 0.5s ease-out 0s;
 }
 .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap span {
+  background: #ffffff;
   color: #111111;
+  padding: 9px 12px 9px 29px;
+  border: 1px solid #bebebe;
+  border-radius: 20px;
   text-transform: uppercase;
-  border-radius: 4px;
+  font-weight: 500;
   font-size: 10px;
-  font-weight: 400;
-  padding: 10px 15px;
   line-height: 1;
-  margin-bottom: 15px;
+  margin-bottom: 19px;
   display: inline-block;
+  position: relative;
+}
+.trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap span::before {
+  position: absolute;
+  left: 8px;
+  top: 7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 40px;
+  content: "";
+  background-color: #fd2952;
 }
 .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap h4 {
   font-size: 18px;
@@ -2808,6 +2822,14 @@ hr {
 }
 .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap h4 a:hover {
   color: #fd2952;
+}
+.trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap .post-date {
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap .post-date time {
+  position: relative;
+  display: inline;
 }
 .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap p {
   color: #111111;
@@ -2828,15 +2850,28 @@ hr {
   padding-left: 18px;
 }
 .trending-area .trending-main .trand-right-single .trand-right-cap span {
+  background: #ffffff;
   color: #111111;
+  padding: 9px 12px 9px 29px;
+  border: 1px solid #bebebe;
+  border-radius: 20px;
   text-transform: uppercase;
-  border-radius: 4px;
+  font-weight: 500;
   font-size: 10px;
-  font-weight: 400;
-  padding: 10px 15px;
   line-height: 1;
-  margin-bottom: 15px;
+  margin-bottom: 19px;
   display: inline-block;
+  position: relative;
+}
+.trending-area .trending-main .trand-right-single .trand-right-cap span::before {
+  position: absolute;
+  left: 8px;
+  top: 7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 40px;
+  content: "";
+  background-color: #fd2952;
 }
 .trending-area .trending-main .trand-right-single .trand-right-cap h4 {
   font-size: 18px;
@@ -3067,17 +3102,15 @@ hr {
   justify-content: space-between;
 }
 .whats-news-area .single-follow .follow-us, .about-area .single-follow .follow-us, .contact-section .single-follow .follow-us {
-  border: 1px solid #f4f4f4;
-  padding-top: 10px;
-  padding-bottom: 15px;
-  padding-left: 13px;
-  padding-right: 13px;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  width: 49%;
+  border: 1px solid #bebebe;
+  padding: 9px 15px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  width: 48%;
 }
 .whats-news-area .single-follow .follow-us .follow-count, .about-area .single-follow .follow-us .follow-count, .contact-section .single-follow .follow-us .follow-count {
   padding-left: 15px;
+  margin-bottom: 6px;
 }
 .whats-news-area .single-follow .follow-us .follow-count span, .about-area .single-follow .follow-us .follow-count span, .contact-section .single-follow .follow-us .follow-count span {
   color: #232323;
@@ -3089,9 +3122,8 @@ hr {
   line-height: 1;
   font-size: 11px;
 }
-.whats-news-area .news-poster img, .about-area .news-poster img, .contact-section .news-poster img {
-  width: 100%;
-  padding: 0 61px;
+.whats-news-area .news-poster, .about-area .news-poster, .contact-section .news-poster {
+  text-align: center;
 }
 .whats-news-area .nav-tabs .nav-link, .about-area .nav-tabs .nav-link, .contact-section .nav-tabs .nav-link {
   border: 0;
@@ -3396,11 +3428,53 @@ hr {
   color: red;
 }
 
-.about-area .about-right .about-img img {
-  width: 100%;
+.about-area time {
+  font-size: 0.875rem;
+}
+.about-area .about-right span {
+  background: #ffffff;
+  color: #111111;
+  padding: 9px 15px 9px 30px;
+  border: 1px solid #bebebe;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1;
+  margin-bottom: 19px;
+  display: inline-block;
+}
+.about-area .about-right span::before {
+  position: absolute;
+  left: 24px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 40px;
+  content: "";
+  background-color: #fd2952;
+}
+.about-area .about-right .about-prea > ul, .about-area .about-right .about-prea .list_link {
+  display: none;
+}
+.about-area .about-right .about-prea img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.about-area .about-right .about-prea figcaption p {
+  font-size: 14px;
+  text-align: center;
 }
 .about-area .about-right .about-prea p {
-  font-size: 15px;
+  text-align: justify;
+  color: #111111;
+}
+.about-area .about-right .about-prea p a {
+  cursor: default;
+  pointer-events: none;
+  color: #111111;
 }
 
 .social-share ul li {
@@ -4677,25 +4751,29 @@ hr {
 .form-contact .form-group {
   margin-bottom: 30px;
 }
-.form-contact .form-control {
-  border: 1px solid #e5e6e9;
-  border-radius: 0px;
+.form-contact .form-group .form-control {
+  border: 1px solid #bebebe;
+  border-radius: 6px;
   height: 48px;
   padding-left: 18px;
   font-size: 13px;
   background: transparent;
 }
-.form-contact .form-control:focus {
+.form-contact .form-group .form-control:focus {
   outline: 0;
   box-shadow: none;
 }
-.form-contact .form-control::placeholder {
+.form-contact .form-group .form-control::placeholder {
   font-weight: 300;
   color: #999999;
 }
-.form-contact textarea {
-  border-radius: 0px;
+.form-contact .form-group textarea {
+  padding: 12px 18px;
   height: 100% !important;
+}
+.form-contact .form-group button {
+  padding: 12px 40px;
+  border-radius: 6px;
 }
 
 /*=================== contact form end ====================*/
