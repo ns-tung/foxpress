@@ -1,20 +1,19 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import PreloaderContainer from './components/Preloader/PreloaderContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
-// import HomeContainer from './components/Home/HomeContainer';
+import RouterContainer from './components/Router/RouterContainer';
 import FooterContainer from './components/Footer/FooterContainer';
-import PostsDetailContainer from './components/PostsDetail/PostsDetailContainer';
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <PreloaderContainer />
       <HeaderContainer />
-      {/* <HomeContainer /> */}
-      <PostsDetailContainer />
+      <RouterContainer />
       <FooterContainer />
-    </div>
+    </Router>
   );
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import testData from './testData';
 import PostCardClassic from '../PostCard/PostCardClassic';
+import PostCardOverlay from '../PostCard/PostCardOverlay';
 class HomeContainer extends React.Component {
 
     constructor(props) {
@@ -13,12 +14,12 @@ class HomeContainer extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://45.76.179.13:4043/api/articles/Trangnhat?limit=5")
+        fetch("https://45.76.179.13:4043/api/articles/Trangnhat?limit=7")
             .then(res => res.json())
             .then(
                 (result) => {
                     let listPost = [];
-                    listPost = result.data.articles.splice(1,5);
+                    listPost = result.data.articles;
                     this.setState({
                         isLoaded: true,
                         items: listPost
@@ -46,20 +47,12 @@ class HomeContainer extends React.Component {
                             <div className="row">
                                 <div className="col-lg-8">
                                     {/* Trending Top */}
-                                    <div className="trending-top mb-30">
-                                        <div className="trend-top-img">
-                                            <img className="img-fluid" src="img/trending/trending_top.jpg" alt="" />
-                                            <div className="trend-top-cap">
-                                                <span>Appetizers</span>
-                                                <h2><a href="details.html">Welcome To The Best Model Winner<br /> Contest At Look of the year</a></h2>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    { this.state.items && this.state.items.length ? this.state.items.splice(0,1).map( e => <PostCardOverlay key={e._id} post={e} />) : <div className="col"><p className="theme-color">No data posts</p></div> }
                                     {/* Trending Bottom */}
                                     <div className="trending-bottom">
                                         <div className="row">
                                             {
-                                                this.state.items && this.state.items.length ? this.state.items.map( e => <PostCardClassic key={e._id} post={e} />) : <div className="col"><p className="theme-color">No data posts</p></div>
+                                                this.state.items && this.state.items.length ? this.state.items.map( e => <div key={e._id} className="col-12 col-sm-6 col-md-4 mb-30"><PostCardClassic post={e} /></div> ) : <div className="col"><p className="theme-color">No data posts</p></div>
                                             }
                                         </div>
                                     </div>

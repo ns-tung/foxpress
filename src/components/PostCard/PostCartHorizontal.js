@@ -1,7 +1,6 @@
 import React from 'react';
-import Categories from '../Categories/CategoriesList';
 
-function PostCardOverlay (props) {
+function PostCardHorizontal() {
 
     function to_slug(str){
         // Chuyển hết sang chữ thường
@@ -34,24 +33,10 @@ function PostCardOverlay (props) {
         // return
         return str;
     }
-
+    
     return (
-        <div className="trending-top mb-30">
-            <a href={to_slug(props.post.title)+"-"+props.post._id+".html"}>
-                <div className="trend-top-img">
-                    <img className="img-fluid w-100" src={props.post.thumb_art} alt={props.post.title} />
-                    <div className="trend-top-cap w-100">
-                        {Categories.map( (e,index) => {if(e.categoryName===props.post.categoryName){return <span key={index}>{e.name}</span>}})}
-                        <h2>{props.post.title}</h2>
-                        <div className="post-date">
-                            <time>{props.post.time}</time>
-                        </div>
-                        {/* <p className="d-none d-sm-block">{props.post.description}</p> */}
-                    </div>
-                </div>
-            </a>
-        </div>
+        <div>PostCardHorizontal</div>
     )
 }
 
-export default PostCardOverlay;
+export default PostCardHorizontal;
