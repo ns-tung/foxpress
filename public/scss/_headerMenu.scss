@@ -80,23 +80,23 @@
                 top: 50%;
                 transform: translateY(-50%);
             }
+            form button {
+                position: absolute;
+                right: 0px;
+                background: none;
+                border: none;
+                color: rgb(100, 99, 99);
+                cursor: pointer;
+                top: 2px;
+            }
         }
-    }
-    .search-box form button {
-        position: absolute;
-        right: 0px;
-        background: none;
-        border: none;
-        color: rgb(100, 99, 99);
-        cursor: pointer;
-        top: 2px;
-    }
-    .header-right-btn:hover .search-box {
-        visibility: visible;
-        opacity: 1;
-        transition: .3s;
-        input{
-            right: 37px;
+        &:hover .search-box {
+            visibility: visible;
+            opacity: 1;
+            transition: .3s;
+            input {
+                right: 37px;
+            }
         }
     }
     
@@ -123,6 +123,7 @@
                         font-size: .875rem;
                         @include transition(.3s);
                         text-transform: capitalize;
+                        &.active { color: $theme-color }
                     }
                     &:hover {
                         >a {

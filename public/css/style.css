@@ -102,16 +102,12 @@
 	color:$theme-color;
 */
 .boxed-btn {
-  background: #fff;
-  color: #fd2952 !important;
-  display: inline-block;
-  padding: 18px 44px;
+  background: #ffffff;
+  padding: 12px 40px;
   font-family: "Maven Pro", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  border: 0;
+  font-weight: 500;
+  border-radius: 6px;
   border: 1px solid #fd2952;
-  letter-spacing: 3px;
   text-align: center;
   color: #fd2952;
   text-transform: uppercase;
@@ -119,8 +115,7 @@
 }
 .boxed-btn:hover {
   background: #fd2952;
-  color: #fff !important;
-  border: 1px solid #fd2952;
+  color: #ffffff;
 }
 .boxed-btn:focus {
   outline: none;
@@ -319,7 +314,7 @@ li {
 }
 
 hr {
-  border-bottom: 1px solid #eceff8;
+  border-bottom: 1px solid #e5e5e5;
   border-top: 0 none;
   margin: 30px 0;
   padding: 0;
@@ -2478,7 +2473,7 @@ hr {
   top: 50%;
   transform: translateY(-50%);
 }
-.header-area .search-box form button {
+.header-area .header-right-btn .search-box form button {
   position: absolute;
   right: 0px;
   background: none;
@@ -2518,6 +2513,9 @@ hr {
   font-size: 0.875rem;
   transition: all 0.3s ease-out 0s;
   text-transform: capitalize;
+}
+.header-area .main-header .main-menu ul li a.active {
+  color: #fd2952;
 }
 .header-area .main-header .main-menu ul li:hover > a {
   color: #fd2952;
@@ -2724,20 +2722,20 @@ hr {
   bottom: 0;
   content: "";
   border-radius: 8px;
+  transition: all 0.3s ease-out 0s;
+}
+.trending-area .trending-main .trending-top .trend-top-img:hover::before {
+  opacity: 0.2;
+  transition: all 0.3s ease-out 0s;
 }
 .trending-area .trending-main .trending-top .trend-top-img img {
   border-radius: 8px;
 }
 .trending-area .trending-main .trending-top .trend-top-img .trend-top-cap {
   position: absolute;
-  bottom: 25px;
-  left: 31px;
-}
-@media (max-width: 575px) {
-  .trending-area .trending-main .trending-top .trend-top-img .trend-top-cap {
-    bottom: -2px;
-    left: 5px;
-  }
+  bottom: 0;
+  left: 0;
+  padding: 30px;
 }
 .trending-area .trending-main .trending-top .trend-top-img .trend-top-cap span {
   background: #ffffff;
@@ -2749,31 +2747,53 @@ hr {
   font-weight: 500;
   font-size: 10px;
   line-height: 1;
-  margin-bottom: 19px;
+  margin-bottom: 20px;
   display: inline-block;
 }
 .trending-area .trending-main .trending-top .trend-top-img .trend-top-cap span::before {
   position: absolute;
-  left: 10px;
-  top: 8px;
+  left: 38px;
+  top: 38px;
   width: 14px;
   height: 14px;
   border-radius: 40px;
   content: "";
   background-color: #fd2952;
 }
+@media (max-width: 575px) {
+  .trending-area .trending-main .trending-top .trend-top-img .trend-top-cap {
+    padding: 20px;
+  }
+  .trending-area .trending-main .trending-top .trend-top-img .trend-top-cap span::before {
+    top: 28px;
+    left: 28px;
+  }
+}
 .trending-area .trending-main .trending-top .trend-top-img .trend-top-cap h2 {
-  font-size: 30px;
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .trending-area .trending-main .trending-top .trend-top-img .trend-top-cap h2 {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 575px) {
   .trending-area .trending-main .trending-top .trend-top-img .trend-top-cap h2 {
-    font-size: 15px;
+    font-size: 0.875rem;
   }
 }
-.trending-area .trending-main .trending-top .trend-top-img .trend-top-cap h2 a {
+.trending-area .trending-main .trending-top .trend-top-img .trend-top-cap time {
+  color: #bebebe;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.trending-area .trending-main .trending-top .trend-top-img .trend-top-cap p {
   color: #ffffff;
-  font-weight: 600;
-  line-height: 1.3;
+  margin: 0;
+  text-align: justify;
 }
 .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-img {
   overflow: hidden;
@@ -2794,7 +2814,7 @@ hr {
   font-weight: 500;
   font-size: 10px;
   line-height: 1;
-  margin-bottom: 19px;
+  margin-bottom: 20px;
   display: inline-block;
   position: relative;
 }
@@ -2809,7 +2829,7 @@ hr {
   background-color: #fd2952;
 }
 .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap h4 {
-  font-size: 18px;
+  font-size: 1rem;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap h4 {
@@ -2832,6 +2852,7 @@ hr {
   display: inline;
 }
 .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap p {
+  line-height: 2;
   color: #111111;
   font-size: 0.875rem;
 }
@@ -2874,7 +2895,7 @@ hr {
   background-color: #fd2952;
 }
 .trending-area .trending-main .trand-right-single .trand-right-cap h4 {
-  font-size: 18px;
+  font-size: 1rem;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .trending-area .trending-main .trand-right-single .trand-right-cap h4 {
@@ -2884,6 +2905,9 @@ hr {
 .trending-area .trending-main .trand-right-single .trand-right-cap h4 a {
   font-weight: 500;
   line-height: 1.4;
+}
+.trending-area .trending-main .trand-right-single .trand-right-cap h4 a:hover {
+  color: #fd2952;
 }
 
 .single-bottom:hover .trend-bottom-img img {
@@ -3431,7 +3455,7 @@ hr {
 .about-area time {
   font-size: 0.875rem;
 }
-.about-area .about-right span {
+.about-area .about-right span.category {
   background: #ffffff;
   color: #111111;
   padding: 9px 15px 9px 30px;
@@ -3441,10 +3465,10 @@ hr {
   font-weight: 500;
   font-size: 10px;
   line-height: 1;
-  margin-bottom: 19px;
+  margin-bottom: 20px;
   display: inline-block;
 }
-.about-area .about-right span::before {
+.about-area .about-right span.category::before {
   position: absolute;
   left: 24px;
   top: 8px;
@@ -3463,7 +3487,16 @@ hr {
   border-radius: 8px;
   margin-bottom: 10px;
 }
-.about-area .about-right .about-prea figcaption p {
+.about-area .about-right .about-prea img + .icon_blockvideo {
+  display: none;
+}
+.about-area .about-right .about-prea picture img {
+  position: absolute;
+}
+.about-area .about-right .about-prea figure .fig-picture {
+  text-align: center;
+}
+.about-area .about-right .about-prea figure figcaption p {
   font-size: 14px;
   text-align: center;
 }
@@ -3510,7 +3543,7 @@ hr {
   padding: 0;
 }
 .footer-area .footer-tittle h4 {
-  color: #fff;
+  color: #ffffff;
   font-size: 20px;
   margin-bottom: 29px;
   font-weight: 500;
@@ -3559,14 +3592,13 @@ hr {
   color: #fd2952;
 }
 .footer-area .footer-social a i {
-  color: #222222;
+  color: #bebebe;
   margin-right: 20px;
   font-size: 1rem;
-  transition: all 0.4s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
 }
-.footer-area .footer-social a i:hover {
+.footer-area .footer-social a:hover i {
   color: #fd2952;
-  box-shadow: 0 -3px 0 0 rgba(24, 24, 24, 0.15) inset, 0 3px 10px rgba(0, 0, 0, 0.3);
   transform: translateY(-3px);
 }
 .footer-area .insta-feed {
@@ -3592,18 +3624,17 @@ hr {
 }
 .footer-bottom-area .footer-copy-right p {
   color: #838383;
-  font-weight: 300;
   font-size: 0.875rem;
   line-height: 2;
 }
 .footer-bottom-area .footer-copy-right p i {
-  color: #f27420;
+  color: #fd2952;
 }
 .footer-bottom-area .footer-copy-right p a {
-  color: #f27420;
+  color: #fd2952;
 }
 .footer-bottom-area .footer-copy-right p a:hover {
-  color: #fff;
+  color: #ffffff;
 }
 
 .footer-menu ul li {
@@ -3624,7 +3655,7 @@ hr {
   font-weight: 500;
 }
 .footer-menu ul li a:hover {
-  color: #f27420;
+  color: #fd2952;
 }
 
 .pagination-area .page-item {
@@ -3660,7 +3691,7 @@ hr {
   content: "";
   width: 38px;
   height: 3px;
-  background: #fc3f00;
+  background: #fd2952;
   top: -50px;
   top: -24px;
   left: 0;
@@ -3676,7 +3707,7 @@ hr {
 
 .single-wrap .right-arrow {
   font-size: 24px;
-  color: red;
+  color: #fd2952;
   position: relative;
   top: -6px;
 }
@@ -4144,7 +4175,7 @@ hr {
   bottom: -10px;
   left: 10px;
   display: block;
-  color: #fff;
+  color: #ffffff;
   background-color: #fd2952;
   padding: 8px 15px;
   border-radius: 5px;
@@ -4159,7 +4190,7 @@ hr {
 .blog_item_img .blog_item_date h3 {
   font-size: 22px;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 0;
   line-height: 1.2;
 }
@@ -4171,7 +4202,7 @@ hr {
 .blog_item_img .blog_item_date p {
   font-size: 18px;
   margin-bottom: 0;
-  color: #fff;
+  color: #ffffff;
 }
 @media (min-width: 768px) {
   .blog_item_img .blog_item_date p {
@@ -4246,7 +4277,7 @@ hr {
   box-shadow: none;
 }
 .blog_right_sidebar .newsletter_widget .input-group button {
-  background: #fff;
+  background: #ffffff;
   border-left: 0;
   border: 1px solid #f0e9ff;
   padding: 4px 15px;
@@ -4288,7 +4319,7 @@ hr {
   transition: all 0.3s linear;
 }
 .blog_right_sidebar .popular_post_widget .post_item .media-body a:hover {
-  color: #fff;
+  color: #ffffff;
 }
 .blog_right_sidebar .popular_post_widget .post_item .media-body p {
   font-size: 14px;
@@ -4411,7 +4442,7 @@ hr {
   }
 }
 .single-post-area .quotes {
-  background: #fff;
+  background: #ffffff;
   padding: 15px 15px 15px 20px;
   border-left: 2px solid;
 }
@@ -4752,28 +4783,15 @@ hr {
   margin-bottom: 30px;
 }
 .form-contact .form-group .form-control {
+  padding: 12px 18px;
+  height: 48px;
   border: 1px solid #bebebe;
   border-radius: 6px;
-  height: 48px;
-  padding-left: 18px;
-  font-size: 13px;
-  background: transparent;
+  font-size: 0.875rem;
 }
 .form-contact .form-group .form-control:focus {
   outline: 0;
   box-shadow: none;
-}
-.form-contact .form-group .form-control::placeholder {
-  font-weight: 300;
-  color: #999999;
-}
-.form-contact .form-group textarea {
-  padding: 12px 18px;
-  height: 100% !important;
-}
-.form-contact .form-group button {
-  padding: 12px 40px;
-  border-radius: 6px;
 }
 
 /*=================== contact form end ====================*/
@@ -5060,22 +5078,13 @@ hr {
 
 .flex-center-start {
   display: flex;
+  display: -ms-flexbox;
   align-items: center;
   justify-content: start;
 }
 
-.overlay::before {
-  background-image: -ms-linear-gradient(170deg, rgba(90, 89, 89, 0) 0%, #4b4949 100%);
-}
-
-.trending-area .trending-main .trending-top .trend-top-img::before {
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#021a47+0,021a47+100&0+0,0.6+100 */
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(2, 26, 71, 0) 0%, rgba(2, 26, 71, 0.6) 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00021a47", endColorstr="#99021a47",GradientType=0 );
-  /* IE6-9 */
+.overlay::before, .trending-area .trending-main .trending-top .trend-top-img::before {
+  background: rgba(17, 17, 17, 0.3);
 }
 
 .sample-text-area {
@@ -5126,12 +5135,12 @@ del {
   outline: none;
   line-height: 40px;
   padding: 0 30px;
-  font-size: 0.8em;
+  font-size: 0.875rem;
   text-align: center;
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease 0s;
+  transition: 0.3s;
 }
 .genric-btn:focus {
   outline: none;
@@ -5161,6 +5170,25 @@ del {
 }
 .genric-btn.arrow span {
   margin-left: 10px;
+}
+.genric-btn.foxpress {
+  color: #fff;
+  background: #fd2952;
+  border: 1px solid transparent;
+}
+.genric-btn.foxpress:hover {
+  color: #fd2952;
+  background: #fff;
+  border: 1px solid #fd2952;
+}
+.genric-btn.foxpress-border {
+  background: #fff;
+  border: 1px solid #fd2952;
+}
+.genric-btn.foxpress-border:hover {
+  color: #fd2952;
+  background: #fff;
+  border: 1px solid transparent;
 }
 .genric-btn.default {
   color: #415094;
@@ -5202,22 +5230,22 @@ del {
 }
 .genric-btn.success {
   color: #fff;
-  background: #4cd3e3;
+  background: #2bbd26;
   border: 1px solid transparent;
 }
 .genric-btn.success:hover {
-  color: #4cd3e3;
-  border: 1px solid #4cd3e3;
+  color: #2bbd26;
+  border: 1px solid #2bbd26;
   background: #fff;
 }
 .genric-btn.success-border {
-  color: #4cd3e3;
-  border: 1px solid #4cd3e3;
+  color: #2bbd26;
+  border: 1px solid #2bbd26;
   background: #fff;
 }
 .genric-btn.success-border:hover {
   color: #fff;
-  background: #4cd3e3;
+  background: #2bbd26;
   border: 1px solid transparent;
 }
 .genric-btn.info {
@@ -5708,7 +5736,7 @@ del {
   left: 19px;
 }
 .confirm-switch input:checked + label:before {
-  background: #4cd3e3;
+  background: #2bbd26;
 }
 
 .primary-checkbox {

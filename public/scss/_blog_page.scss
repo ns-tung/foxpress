@@ -167,7 +167,7 @@
 
         .meta-bottom {
             p {
-                // color: $white_color;
+                // color: $white;
             }
         }
 
@@ -183,7 +183,7 @@
     }
 
     a {
-        // color: $white_color;
+        // color: $white;
         font-size: 20px;
         font-weight: 600;
 
@@ -601,7 +601,7 @@
         bottom: -10px;
         left: 10px;
         display: block;
-        color: $white_color;
+        color: $white;
         background-color: $theme-color;
         padding: 8px 15px;
         border-radius: 5px;
@@ -615,7 +615,7 @@
         h3 {
             font-size: 22px;
             font-weight: 600;
-            color: $white_color;
+            color: $white;
             margin-bottom: 0;
             line-height: 1.2;
 
@@ -627,7 +627,7 @@
         p {
             font-size: 18px;
             margin-bottom: 0;
-            color: $white_color;
+            color: $white;
 
             @media(min-width: 768px) {
                 font-size: 18px;
@@ -736,7 +736,7 @@
         .input-group {
 
             button {
-                background: $white_color;
+                background: $white;
                 border-left: 0;
                 border: 1px solid #f0e9ff;
                 padding: 4px 15px;
@@ -808,7 +808,7 @@
 
                     // color: $title_color;
                     &:hover {
-                        color: $white_color;
+                        color: $white;
                     }
 
                 }
@@ -1012,7 +1012,7 @@
 
     &:hover {
         // background-color: $baseColor;
-        // color: $white_color;
+        // color: $white;
     }
 }
 
@@ -1102,7 +1102,7 @@
     }
 
     .quotes {
-        background: $white_color;
+        background: $white;
         padding: 15px 15px 15px 20px;
         border-left: 2px solid;
 

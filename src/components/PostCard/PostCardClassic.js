@@ -1,19 +1,52 @@
 import React from 'react';
+import Categories from '../Categories/CategoriesList';
+
 function PostCardClassic (props) {
+
+    function to_slug(str){
+        // Chuyển hết sang chữ thường
+        str = str.toLowerCase();     
+    
+        // xóa dấu
+        str = str.replace(/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/g, 'a');
+        str = str.replace(/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/g, 'e');
+        str = str.replace(/(ì|í|ị|ỉ|ĩ)/g, 'i');
+        str = str.replace(/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/g, 'o');
+        str = str.replace(/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/g, 'u');
+        str = str.replace(/(ỳ|ý|ỵ|ỷ|ỹ)/g, 'y');
+        str = str.replace(/(đ)/g, 'd');
+    
+        // Xóa ký tự đặc biệt
+        str = str.replace(/([^0-9a-z-\s])/g, '');
+    
+        // Xóa khoảng trắng thay bằng ký tự -
+        str = str.replace(/(\s+)/g, '-');
+    
+        // Xóa phần dư - ở đầu
+        str = str.replace(/^-+/g, '');
+
+        // Thay thế --- ở giữa
+        str = str.replace(/(---)/g, '-');
+    
+        // Xóa phần dư - ở cuối
+        str = str.replace(/-+$/g, '');
+    
+        // return
+        return str;
+    }
+
     return (
-        <div className="col-12 col-sm-6">
-            <div className="single-bottom mb-35">
-                <div className="trend-bottom-img mb-30">
-                    <img src={props.post.thumb_art} alt={props.post.title} />
+        <div className="single-bottom">
+            <div className="trend-bottom-img mb-30">
+                <img className="img-fluid" src={props.post.thumb_art} alt={props.post.title} />
+            </div>
+            <div className="trend-bottom-cap">
+                {Categories.map( (e,index) => {if(e.categoryName===props.post.categoryName){return <span key={index}>{e.name}</span>}})}
+                <h4><a href={to_slug(props.post.title)+"-"+props.post._id+".html"}>{props.post.title}</a></h4>
+                <div className="post-date">
+                    <time>{props.post.time}</time>
                 </div>
-                <div className="trend-bottom-cap">
-                    <span className="color1">{props.post.categoryName}</span>
-                    <h4><a href="details.html">{props.post.title}</a></h4>
-                    <div className="post-date">
-                        <time>{props.post.time}</time>
-                    </div>
-                    <p>{props.post.description}</p>
-                </div>
+                <p>{props.post.description}</p>
             </div>
         </div>
     )

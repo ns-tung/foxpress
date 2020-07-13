@@ -17,7 +17,7 @@
     }
     .footer-tittle{
         & h4{
-            color: #fff;
+            color: $white;
             font-size: 20px;
             margin-bottom: 29px;
             font-weight: 500;
@@ -74,22 +74,19 @@
     }
     // Social
     .footer-social{
-        & a{
-           & i{
-            color: #222222;
-            margin-right: 20px; 
-            font-size: 1rem;
-            @include transition(.4s);
-            &:hover{
-                color: $theme-color;
-                box-shadow: 0 -3px 0 0 rgba(24,24,24,.15) inset, 0 3px 10px rgba(0,0,0,0.3);
-                -webkit-transform: translateY(-3px);
-                -moz-transform: translateY(-3px);
-                -ms-transform: translateY(-3px);
-                transform: translateY(-3px);
+        a{
+           i {
+                color: $gray-color;
+                margin-right: 20px; 
+                font-size: 1rem;
+                @include transition(.3s);
             }
-          
-           }
+            &:hover{
+                i {
+                    color: $theme-color;
+                    transform: translateY(-3px);
+                }
+            }
         }
     }   
     // Instagram\
@@ -121,20 +118,18 @@
         // }
     }
     .footer-copy-right{
-        & p{
+        p {
             color: #838383;
-            font-weight: 300;
             font-size: .875rem;
             line-height: 2;
-            & i{
-                color:#f27420;
+            i {
+                color:$theme-color;
             }
-            & a{
-                color: #f27420;
+            a {
+                color: $theme-color;
                 &:hover{
-                    color: #fff;
-                }
-                 
+                    color: $white;
+                } 
             }
         }
     }
@@ -149,12 +144,12 @@
     @media #{$xs}{
         margin-left: 20px;
     }
-    a{
+    a {
         color: #777777;
         font-size: .875rem;
         font-weight: 500;
         &:hover{
-            color: #f27420;
+            color: $theme-color;
         }
     }
 }
@@ -193,7 +188,7 @@
             content: "";
             width: 38px;
             height: 3px;
-            background:#fc3f00;
+            background: $theme-color;
             top: -50px;
             top: -24px;
             left: 0;
@@ -209,7 +204,7 @@
 }
 .single-wrap .right-arrow {
     font-size: 24px;
-    color:red;
+    color: $theme-color;
     position: relative;
     top: -6px;
 }

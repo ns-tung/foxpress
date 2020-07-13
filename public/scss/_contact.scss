@@ -57,30 +57,15 @@
   .form-group{
     margin-bottom: 30px;
     .form-control{
+      padding: 12px 18px;
+      height: 48px;
       border: 1px solid $gray-color;
       border-radius: 6px;
-      height: 48px;
-      padding-left: 18px;
-      font-size: 13px;
-      background: transparent;
-  
+      font-size: .875rem;
       &:focus{
         outline: 0;
         box-shadow: none;
       }
-  
-      &::placeholder{
-        font-weight: 300;
-        color: #999999;
-      }
-    }
-    textarea{
-      padding: 12px 18px;
-      height: 100% !important;
-    }
-    button {
-      padding: 12px 40px;
-      border-radius: 6px;
     }
   }
 }
