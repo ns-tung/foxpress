@@ -56,7 +56,11 @@ class PostsDetailContainer extends React.Component {
                                     {/* <div className="about-img">
                                         <img src={this.state.postDetail.thumb_art} alt={this.state.postDetail.title} />
                                     </div> */}
-                                    {Categories.map((e,index) => { if(e.categoryName === this.state.postDetail.categoryName) {return <span key={index} className="category" >{e.name}</span>}})}
+                                    {
+                                        Categories
+                                            .filter(e => e.categoryName === this.state.postDetail.categoryName)
+                                            .map((e,index) => <span key={index} className="category">{e.name}</span>)
+                                    }
                                     <div className="section-tittle mb-20">
                                         <h3>{this.state.postDetail.title}</h3>
                                         <time>{this.state.postDetail.time}</time>

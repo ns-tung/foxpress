@@ -41,7 +41,11 @@ function PostCardOverlay (props) {
                 <div className="trend-top-img">
                     <img className="img-fluid w-100" src={props.post.thumb_art} alt={props.post.title} />
                     <div className="trend-top-cap w-100">
-                        {Categories.map( (e,index) => {if(e.categoryName===props.post.categoryName){return <span key={index}>{e.name}</span>}})}
+                        {
+                            Categories
+                                .filter(e => e.categoryName === props.post.categoryName)
+                                .map((e,index) => <span key={index}>{e.name}</span>)
+                        }
                         <h2>{props.post.title}</h2>
                         <div className="post-date">
                             <time>{props.post.time}</time>
