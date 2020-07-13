@@ -15,11 +15,9 @@ class CategoryContainer extends React.Component {
     }
 
     UNSAFE_componentWillMount() {
-        Categories.map( e => {
-            if(e.type === this.props.match.url) {
-                this.setState({catName: e.categoryName});
-            }
-        })
+        Categories
+            .filter(e => e.type === this.props.match.url)
+            .map(e => this.setState({catName: e.categoryName}))
     }
     
     componentDidMount() {

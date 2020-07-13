@@ -41,7 +41,11 @@ function PostCardClassic (props) {
                 <img className="img-fluid" src={props.post.thumb_art} alt={props.post.title} />
             </div>
             <div className="trend-bottom-cap">
-                {Categories.map( (e,index) => {if(e.categoryName===props.post.categoryName){return <span key={index}>{e.name}</span>}})}
+                {
+                    Categories
+                        .filter(e => e.categoryName === props.post.categoryName)
+                        .map((e,index) => <span key={index}>{e.name}</span>)
+                }
                 <h4><a href={to_slug(props.post.title)+"-"+props.post._id+".html"}>{props.post.title}</a></h4>
                 <div className="post-date">
                     <time>{props.post.time}</time>
