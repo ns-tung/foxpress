@@ -1,7 +1,7 @@
 import React from 'react';
-import testData from './testData';
 import PostCardClassic from '../PostCard/PostCardClassic';
 import PostCardOverlay from '../PostCard/PostCardOverlay';
+import PostCardHorizontal from '../PostCard/PostCartHorizontal';
 class HomeContainer extends React.Component {
 
     constructor(props) {
@@ -9,7 +9,8 @@ class HomeContainer extends React.Component {
         this.state = {
           error: null,
           isLoaded: false,
-          items: []
+          itemsLeft: [],
+          itemsRight: []
         };
     }
 
@@ -22,19 +23,23 @@ class HomeContainer extends React.Component {
                     listPost = result.data.articles;
                     this.setState({
                         isLoaded: true,
-                        items: listPost
+                        itemsLeft: listPost
                     });
-            },
-            // Note: it's important to handle errors here
-            // instead of a catch() block so that we don't swallow
-            // exceptions from actual bugs in components.
-            (error) => {
-              this.setState({
-                isLoaded: true,
-                error
-              });
-            }
-        )
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                this.setState({
+                    isLoaded: true,
+                    error
+                });
+                }
+            )
+
+        fetch("https://45.76.179.13:4043/api/articles/Thoisu?limit=6")
+            .then(lst => lst.json())
+            .then( e => this.setState({itemsRight: e.data.articles}))
     }
 
     render() {
@@ -42,68 +47,22 @@ class HomeContainer extends React.Component {
             <main className="my-5">
                 {/* Trending Area Start */}
                 <div className="trending-area fix">
-                    <div className="container">
-                        <div className="trending-main">
+                    <div className="trending-main">
+                        <div className="container">
                             <div className="row">
                                 <div className="col-lg-8">
-                                    {/* Trending Top */}
-                                    { this.state.items && this.state.items.length ? this.state.items.splice(0,1).map( e => <PostCardOverlay key={e._id} post={e} />) : <div className="col"><p className="theme-color">No data posts</p></div> }
-                                    {/* Trending Bottom */}
+                                    { this.state.itemsLeft && this.state.itemsLeft.length ? this.state.itemsLeft.splice(0,1).map( e => <PostCardOverlay key={e._id} post={e} />) : <div className="row"><div className="col"><p className="theme-color">No data posts</p></div></div> }
                                     <div className="trending-bottom">
                                         <div className="row">
                                             {
-                                                this.state.items && this.state.items.length ? this.state.items.map( e => <div key={e._id} className="col-12 col-sm-6 col-md-4 mb-30"><PostCardClassic post={e} /></div> ) : <div className="col"><p className="theme-color">No data posts</p></div>
+                                                this.state.itemsLeft && this.state.itemsLeft.length ? this.state.itemsLeft.splice(0,3).map( e => <div key={e._id} className="col-12 col-sm-6 col-md-4 mb-30"><PostCardClassic post={e} /></div> ) : <div className="col"><p className="theme-color">No data posts</p></div>
                                             }
                                         </div>
                                     </div>
                                 </div>
                                 {/* Riht content */}
                                 <div className="col-lg-4">
-                                    <div className="trand-right-single d-flex">
-                                        <div className="trand-right-img">
-                                            <img src="img/trending/right1.jpg" alt="" />
-                                        </div>
-                                        <div className="trand-right-cap">
-                                            <span className="color1">Concert</span>
-                                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                                        </div>
-                                    </div>
-                                    <div className="trand-right-single d-flex">
-                                        <div className="trand-right-img">
-                                            <img src="img/trending/right2.jpg" alt="" />
-                                        </div>
-                                        <div className="trand-right-cap">
-                                            <span className="color3">sea beach</span>
-                                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                                        </div>
-                                    </div>
-                                    <div className="trand-right-single d-flex">
-                                        <div className="trand-right-img">
-                                            <img src="img/trending/right3.jpg" alt="" />
-                                        </div>
-                                        <div className="trand-right-cap">
-                                            <span className="color2">Bike Show</span>
-                                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                                        </div>
-                                    </div>
-                                    <div className="trand-right-single d-flex">
-                                        <div className="trand-right-img">
-                                            <img src="img/trending/right4.jpg" alt="" />
-                                        </div>
-                                        <div className="trand-right-cap">
-                                            <span className="color4">See beach</span>
-                                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                                        </div>
-                                    </div>
-                                    <div className="trand-right-single d-flex">
-                                        <div className="trand-right-img">
-                                            <img src="img/trending/right5.jpg" alt="" />
-                                        </div>
-                                        <div className="trand-right-cap">
-                                            <span className="color1">Skeping</span>
-                                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                                        </div>
-                                    </div>
+                                    { this.state.itemsRight && this.state.itemsRight.length ? this.state.itemsRight.map( e => <PostCardHorizontal key={e._id} post={e} />) : <div className="row"><div className="col"><p className="theme-color">No data posts</p></div></div> }
                                 </div>
                             </div>
                         </div>
@@ -122,20 +81,14 @@ class HomeContainer extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="row">
-                                <div className="col-12">
-                                    <div className="row weekly-news-active dot-style d-flex dot-style">
-                                        {
-                                            testData.map(x => <div className="weekly-single col-md-4 mx-0 mb-5" key={x._id}>
-                                                <div className="weekly-img">
-                                                    <img src={x.thumb_art} alt="" />
-                                                </div>
-                                                <div className="weekly-caption">
-                                                    <span className="color1">Strike</span>
-                                                    <h4><a href="/">{x.title}</a></h4>
-                                                </div>
-                                            </div>)
-                                        }
+                            <div className="trending-area">
+                                <div className="trending-main">
+                                    <div className="trending-top">
+                                        <div className="row">
+                                            {
+                                                this.state.itemsLeft && this.state.itemsLeft.length ? this.state.itemsLeft.map( e => <div key={e._id} className="col-12 col-sm-6 col-md-4 mb-30"><PostCardOverlay post={e} /></div> ) : <div className="col"><p className="theme-color">No data posts</p></div>
+                                            }
+                                        </div>
                                     </div>
                                 </div>
                             </div>

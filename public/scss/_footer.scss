@@ -159,52 +159,68 @@
 .pagination-area{
     .page-item {
         margin: 0;
-    }
-    .page-item:first-child {margin: 0;}
-    .page-link {
-        color: #777777;
-        border:0;
-        font-size: 1rem;
-        text-align: center;
-        background: none;
-        padding: 0 10px;
-        box-shadow: none;
-        outline: 0;
-    }
-    .page-link:hover {
-        color:$theme-color;
-    }
-    .page-item.active .page-link {
-        z-index: 1;
-        color: #000;
-        background: none;
-        border: 0;
-        // a
-        position: relative;
-        box-shadow: none;
-        outline: 0;
-        &::before{
-            position: absolute;
-            content: "";
-            width: 38px;
-            height: 3px;
-            background: $theme-color;
-            top: -50px;
-            top: -24px;
-            left: 0;
+        &:first-child {margin: 0;}
+        .page-link {
+            color: #777777;
+            border:0;
+            font-size: 1rem;
+            text-align: center;
+            background: none;
+            padding: 0 10px;
+            box-shadow: none;
+            outline: 0;
+            &:hover {
+                color:$theme-color;
+            }
         }
-        &:hover{
+        &.active {
+            .page-link {
+                z-index: 1;
+                color: #000;
+                font-weight: 700;
+                background: none;
+                border: 0;
+                // a
+                position: relative;
+                box-shadow: none;
+                outline: 0;
+                &::before{
+                    position: absolute;
+                    content: "";
+                    width: 38px;
+                    height: 3px;
+                    background: $theme-color;
+                    top: -50px;
+                    top: -24px;
+                    left: 0;
+                }
+                &:hover{
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+    .break-me {
+        color: $black;
+        &:hover {
             color: $theme-color;
         }
+        a {
+            font-size: .5rem;
+            letter-spacing: 2px;
+        }
     }
 }
-.single-wrap .roted {
-	transform: rotate(180deg);
-	display: block;
-}
-.single-wrap .right-arrow {
+
+.single-wrap span[class^="flaticon-"],
+.single-wrap span[class*=" flaticon-"] {
     font-size: 24px;
     color: $theme-color;
     position: relative;
-    top: -6px;
+    top: -4px;
+}
+
+.flaticon-left:before {
+    margin-left: 0;
+    margin-right: 20px;
 }

@@ -37,21 +37,23 @@ function PostCardClassic (props) {
 
     return (
         <div className="single-bottom">
-            <div className="trend-bottom-img mb-30">
-                <img className="img-fluid" src={props.post.thumb_art} alt={props.post.title} />
-            </div>
-            <div className="trend-bottom-cap">
-                {
-                    Categories
-                        .filter(e => e.categoryName === props.post.categoryName)
-                        .map((e,index) => <span key={index}>{e.name}</span>)
-                }
-                <h4><a href={to_slug(props.post.title)+"-"+props.post._id+".html"}>{props.post.title}</a></h4>
-                <div className="post-date">
-                    <time>{props.post.time}</time>
+            <a href={to_slug(props.post.title)+"-"+props.post._id+".html"}>
+                <div className="trend-bottom-img mb-30">
+                    <img className="img-fluid w-100" src={props.post.thumb_art} alt={props.post.title} />
                 </div>
-                <p>{props.post.description}</p>
-            </div>
+                <div className="trend-bottom-cap">
+                    {
+                        Categories
+                            .filter(e => e.categoryName === props.post.categoryName)
+                            .map((e,index) => <span className="category" key={index}>{e.name}</span>)
+                    }
+                    <h4>{props.post.title}</h4>
+                    <div className="post-date">
+                        <time>{props.post.time}</time>
+                    </div>
+                    <p>{props.post.description}</p>
+                </div>
+            </a>
         </div>
     )
 }

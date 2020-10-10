@@ -7,7 +7,7 @@ function PreloaderContainer() {
                 <div className="preloader-inner position-relative">
                     <div className="preloader-circle" />
                     <div className="preloader-img pere-text">
-                        <img className="img-fluid" src="img/logo/logo.png" alt="" />
+                        <img className="img-fluid" src="img/logo/logo.svg" alt="FoxPress" />
                     </div>
                 </div>
             </div>

@@ -46,7 +46,7 @@ class HeaderContainer extends React.Component {
                                 {/* Logo */}
                                 <div className="col-xl-3 col-lg-3 col-md-3">
                                     <div className="logo">
-                                        <a href="/"><img className="img-fluid" src="img/logo/logo.png" alt="" /></a>
+                                        <a href="/"><img className="img-fluid" src="img/logo/logo.svg" alt="" /></a>
                                     </div>
                                 </div>
                                 <div className="col-xl-9 col-lg-9 col-md-9">
@@ -63,7 +63,7 @@ class HeaderContainer extends React.Component {
                                 <div className="col-12 header-flex">
                                     {/* sticky */}
                                     <div className="sticky-logo w-100 info-open">
-                                        <a href="/"><img className="img-fluid w-25" src="img/logo/logo.png" alt="" /></a>
+                                        <a href="/"><img className="img-fluid w-25" src="img/logo/logo.svg" alt="" /></a>
                                     </div>
                                     {/* Main-menu */}
                                     <div className="main-menu d-none d-md-block">

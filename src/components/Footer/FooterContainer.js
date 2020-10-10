@@ -12,7 +12,7 @@ function FooterContainer() {
                                 <div className="single-footer-caption">
                                     {/* logo */}
                                     <div className="footer-logo">
-                                        <a href="/"><img src="img/logo/logo-footer.png" alt="" /></a>
+                                        <a href="/"><img src="img/logo/logo-footer.svg" alt="" /></a>
                                     </div>
                                     <div className="footer-tittle">
                                         <div className="footer-pera">
