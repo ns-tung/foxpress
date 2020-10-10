@@ -9,7 +9,6 @@
       });
     });
 
-
 /* 2. slick Nav */
 // mobile_menu
     $(window).on('load', function(){
@@ -191,10 +190,6 @@
           }
         }
       ]
-
-
-
-
     });
 
 
@@ -240,7 +235,7 @@
 /* 7.  Custom Sticky Menu  */
     $(window).on('scroll', function () {
       var scroll = $(window).scrollTop();
-      if (scroll < 245) {
+      if (scroll < 160) {
         $(".header-sticky ").removeClass("sticky-bar");
       } else {
         $(".header-sticky").addClass("sticky-bar");
@@ -250,7 +245,7 @@
     /*   Show img flex  */
     $(window).on('scroll', function () {
       var scroll = $(window).scrollTop();
-      if (scroll < 245) {
+      if (scroll < 160) {
         $(".header-flex").removeClass("sticky-flex");
       } else {
         $(".header-flex").addClass("sticky-flex");
@@ -259,7 +254,7 @@
 
     $(window).on('scroll', function () {
       var scroll = $(window).scrollTop();
-      if (scroll < 245) {
+      if (scroll < 160) {
           $(".header-sticky").removeClass("sticky");
       } else {
           $(".header-sticky").addClass("sticky");
@@ -274,8 +269,8 @@
       topDistance: '300', // Distance from top before showing element (px)
       topSpeed: 300, // Speed back to top (ms)
       animation: 'fade', // Fade, slide, none
-      animationInSpeed: 200, // Animation in speed (ms)
-      animationOutSpeed: 200, // Animation out speed (ms)
+      animationInSpeed: 300, // Animation in speed (ms)
+      animationOutSpeed: 300, // Animation out speed (ms)
       scrollText: '<i class="fal fa-arrow-to-top"></i>', // Text for element
       activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
     });
@@ -292,14 +287,14 @@
 
 /* 11. Datepicker */
     
-// 11. ---- Mailchimp js --------//  
+// 12. ---- Mailchimp js --------//  
     function mailChimp() {
       $('#mc_embed_signup').find('form').ajaxChimp();
     }
     mailChimp();
 
 
-// 12 Pop Up Img
+// 13 Pop Up Img
     var popUp = $('.single_gallery_part, .img-pop-up');
       if(popUp.length){
         popUp.magnificPopup({
@@ -311,18 +306,12 @@
       }
 
 // Add class
-
-
-
-
-$('.sticky-logo').addClass('info-open');
+  $('.sticky-logo').addClass('info-open');
 
 
 // Remove class
-$('.close-icon').click(function(){
-  $('.extra-inofo-bar').removeClass('info-open');
-})
-
-
+  $('.close-icon').click(function(){
+    $('.extra-inofo-bar').removeClass('info-open');
+  })
 
 })(jQuery);

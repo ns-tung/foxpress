@@ -1,6 +1,7 @@
 import React from 'react';
+// import Categories from '../Categories/CategoriesList';
 
-function PostCardHorizontal() {
+function PostCardHorizontal(props) {
 
     function to_slug(str){
         // Chuyển hết sang chữ thường
@@ -35,7 +36,28 @@ function PostCardHorizontal() {
     }
     
     return (
-        <div>PostCardHorizontal</div>
+        <div className="trand-right-single d-flex">
+            <a href={to_slug(props.post.title)+"-"+props.post._id+".html"}>
+                <div className="row">
+                        <div className="col-5">
+                            <div className="trand-right-img">
+                                <img className="img-fluid w-100" src={props.post.thumb_art} alt={props.post.title} />
+                            </div>
+                        </div>
+                        <div className="col-7 pl-0">
+                            <div className="trand-right-cap">
+                                {/* {
+                                    Categories
+                                        .filter(e => e.categoryName === props.post.categoryName)
+                                        .map((e,index) => <span className="category" key={index}>{e.name}</span>)
+                                } */}
+                                <time>{props.post.time}</time>
+                                <h4>{props.post.title}</h4>
+                            </div>
+                        </div>
+                </div>
+            </a>
+        </div>
     )
 }
 

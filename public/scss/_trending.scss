@@ -8,53 +8,31 @@
             .trend-top-img {
                 overflow: hidden;
                 position: relative;
+                border-radius: 8px;
                 &::before {
                     position: absolute;
                     width: 100%;
                     height: 100%;
                     bottom: 0;
                     content: "";
-                    border-radius: 8px;
+                    opacity: .1;
                     @extend %overlay;
                     @include transition(.3s);
                 }
                 
                 &:hover::before {
-                    opacity: .2;
+                    opacity: 1;
                     @include transition(.3s);
-                }
-
-                img {
-                    border-radius: 8px;
                 }
 
                 .trend-top-cap {
                     position: absolute;
                     bottom: 0;
                     left: 0;
-                    padding: 30px;
-                    span {
-                        background:$white;
-                        color: $heading-color;
-                        padding: 9px 15px 9px 30px;
-                        border: 1px solid $gray-color;
-                        border-radius: 20px;
-                        text-transform: uppercase;
-                        font-weight: 500;
-                        font-size: 10px;
-                        line-height: 1;
-                        margin-bottom: 20px;
-                        display: inline-block;
-                        &::before {
-                            position: absolute;
-                            left: 38px;
-                            top: 38px;
-                            width: 14px;
-                            height: 14px;
-                            border-radius: 40px;
-                            content: "";
-                            background-color: $theme-color;
-                        }
+                    padding: 15px 20px;
+                    span.category::before {
+                        left: 8px;
+                        top: 7px;
                     }
 
                     @media #{$xs} {
@@ -69,18 +47,19 @@
 
                     h2 {
                         color: $white;
-                        font-size: 1.25rem;
-                        line-height:1.5;
-                        font-weight: 500;
-                        @media #{$md} {
+                        font-size: 1rem;
+                        line-height:1.2;
+                        font-weight: 400;
+                        @media #{$sm} {
                             font-size: 1rem;
                         }
-                        @media #{$xs} {
-                            font-size: .875rem;
-                        }
+                        // @media #{$xs} {
+                        //     font-size: .875rem;
+                        // }
                     }
 
                     time {
+                        display: block;
                         color: $gray-color;
                         font-size: 0.75rem;
                         margin-bottom: 0.75rem;
@@ -99,63 +78,58 @@
             .single-bottom {
                 .trend-bottom-img {
                     overflow: hidden;
+                    border-radius: 8px;
                     img {
-                        width: 100%;
-                        border-radius: 8px;
                         transform: scale(1);
-                        transition: all 0.5s ease-out 0s;
+                        @include transition(.3s);
                     }
                 }
                 .trend-bottom-cap{
-                    span {
-                        background:$white;
-                        color: $heading-color;
+                    span.category {
                         padding: 9px 12px 9px 29px;
-                        border: 1px solid $gray-color;
-                        border-radius: 20px;
-                        text-transform: uppercase;
-                        font-weight: 500;
-                        font-size: 10px;
-                        line-height: 1;
-                        margin-bottom: 20px;
-                        display: inline-block;
-                        position: relative;
                         &::before {
-                            position: absolute;
                             left: 8px;
                             top: 7px;
-                            width: 14px;
-                            height: 14px;
-                            border-radius: 40px;
-                            content: "";
-                            background-color: $theme-color;
                         }
                     }
+
                     h4 {      
                         font-size: 1rem; 
+                        font-weight: 500;
+                        line-height:1.4;
+                        @include transition(.3s);
                         @media #{$lg} {
                             font-size: 16px;
-                        }           
-                        a {
-                            font-weight: 500;
-                            line-height:1.4;
-                            &:hover{
-                                color: $theme-color;
-                            }
                         }
                     }
+
                     .post-date {
                         font-size: .75rem;
                         margin-bottom: .75rem;
                         time {
                             position: relative;
                             display: inline;
+                            color: $black;
                         }
                     }
+
                     p {
                         line-height: 2;
                         color: $black;
                         font-size: 0.875rem;
+                    }
+                }
+
+                &:hover{
+                    .trend-bottom-img {
+                        img {
+                            transform: scale(1.1);
+                            @include transition(.3s);
+                        }
+                    }
+                    h4 {
+                        @include transition(.3s);
+                        color: $theme-color;
                     }
                 }
             }
@@ -168,49 +142,40 @@
             &:last-child {
                 border-bottom: 0;
             }
+            &:hover {
+                h4 {
+                    color: $theme-color;
+                }
+            }
             .trand-right-img {
                 img {
                     border-radius: 6px;
                 }
             }
             .trand-right-cap {
-                padding-left: 18px;
-                span {
-                    background:$white;
-                    color: $heading-color;
+                span.category {
                     padding: 9px 12px 9px 29px;
-                    border: 1px solid $gray-color;
-                    border-radius: 20px;
-                    text-transform: uppercase;
-                    font-weight: 500;
-                    font-size: 10px;
-                    line-height: 1;
-                    margin-bottom: 19px;
-                    display: inline-block;
-                    position: relative;
+                    margin-bottom: .625rem;
                     &::before {
-                        position: absolute;
                         left: 8px;
                         top: 7px;
-                        width: 14px;
-                        height: 14px;
-                        border-radius: 40px;
-                        content: "";
-                        background-color: $theme-color;
                     }
                 }
+                
                 h4 {     
-                    font-size: 1rem; 
+                    font-size: .875rem; 
+                    font-weight: 700;
+                    line-height:1.4;
                     @media #{$lg}{
-                        font-size:15px;
+                        font-size: 1rem;
                     }
-                    a {
-                        font-weight: 500;
-                        line-height:1.4;
-                        &:hover {
-                            color: $theme-color;
-                        }
-                    }
+                }
+
+                time {
+                    display: block;
+                    color: $body-text-color;
+                    font-size: 0.75rem;
+                    margin-bottom: 0.75rem;
                 }
             }
         }

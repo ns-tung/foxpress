@@ -44,7 +44,7 @@ function PostCardOverlay (props) {
                         {
                             Categories
                                 .filter(e => e.categoryName === props.post.categoryName)
-                                .map((e,index) => <span key={index}>{e.name}</span>)
+                                .map((e,index) => <span className="category" key={index}>{e.name}</span>)
                         }
                         <h2>{props.post.title}</h2>
                         <div className="post-date">

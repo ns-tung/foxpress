@@ -2,34 +2,41 @@
 .header-area {
         
     // Top
-    .header-top{
+    .header-top {
         padding: 8px 0px;
-        .header-info-left{
-            ul{
-                li{
+        .header-info-left {
+            ul {
+                li {
                     color: $white;
                     display: inline-block;
                     font-family: $font_face;
                     font-size: .875rem;
-                    &:first-child{
+                    &:first-child {
                         margin-right: 1rem;
                     }
-                    img{
+                    img {
                        margin-right: 8px;
                     }
                 }
             }
         }
-        .header-info-right{
-            .header-social{
-                li{
+        .header-info-right {
+            .header-social {
+                li {
                     display: inline-block;
-                    & a{
+                    a {
                         color: $white;
                         font-size: .875rem;
                         padding-left: 20px;
+                        i {
+                            @include transition(.8s);
+                            transform: rotateY(0deg);
+                        }
                         &:hover{
                             color: $theme-color;
+                            i {
+                                transform: rotateY(360deg);
+                            }
                         }
                     }
                 }
@@ -116,7 +123,7 @@
     
                     a {
                         color: #002e5b;
-                        font-weight: 500;
+                        font-weight: 600;
                         margin-top: -2px;
                         padding: 1rem 1rem 1rem 0;
                         display: block;
@@ -124,6 +131,18 @@
                         @include transition(.3s);
                         text-transform: capitalize;
                         &.active { color: $theme-color }
+                    }
+                    @media #{$lg} {
+                        a {
+                            padding: 0.75rem 0.75rem 0.75rem 0;
+                            font-size: 0.75rem;
+                        }
+                    }
+                    @media #{$md} {
+                        a {
+                            padding: 0.5rem 0.5rem 0.5rem 0;
+                            font-size: .625rem;
+                        }
                     }
                     &:hover {
                         >a {
@@ -141,19 +160,16 @@
                                 font-size: 10px;
                                 padding: .438rem .399rem;
                                 border-radius: 50%;
+                                color: #4f4f4f;
+                                background-color: #e5e5e5;
+                                @include transition(.3s);
                             }
                             i.fox-press {
                                 display: none;
                                 width: 24px;
                                 height: 24px;
                                 background:url(../img/logo/logo-icon.svg) no-repeat 0 0;
-                            }
-                            &:not(:hover) {
-                                i.far {
-                                    color: #4f4f4f;
-                                    background-color: #e5e5e5;
-                                    @include transition(.3s);
-                                }
+                                @include transition(.3s);
                             }
                             &:hover {
                                 i.far {
@@ -207,13 +223,10 @@
 
 
 // Social Hover Effect
-    .header-area .header-top .header-info-right .header-social a i {
-        @include transition(.4s);
-        transform: rotateY(0deg);
-    }
-    .header-area .header-top .header-info-right .header-social a:hover i {
-        transform: rotateY(180deg);
-    }
+    // .header-area .header-top .header-info-right .header-social a i {
+    // }
+    // .header-area .header-top .header-info-right .header-social a:hover i {
+    // }
 
 // header Sticky Responsive
 .header-sticky {
@@ -230,9 +243,11 @@
                     a {
                         i.far {
                             display: none;
+                            @include transition(.3s);
                         }
                         i.fox-press {
                             display: block;
+                            @include transition(.3s);
                         }
                     }
                 }
@@ -250,7 +265,7 @@
 // Sticky  Menu
 .header-sticky.sticky-bar.sticky {
     .header-btn {
-        & .get-btn{
+        .get-btn{
             padding: 20px 20px;
         }
     }
