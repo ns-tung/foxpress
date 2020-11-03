@@ -1,14 +1,10 @@
 import React from 'react';
 import generateLink from '../../helper/generateLink';
-import convertSizeImageUrl from '../../helper/convertSizeImageUrl';
 
-function PostCardClassic (props) {
+function PostCardText (props) {
     return (
         <div className="single-bottom">
             <a href={generateLink( props.post.title, props.post._id )}>
-                <div className="trend-bottom-img mb-30">
-                    <img className="img-fluid w-100" src={convertSizeImageUrl.toFull(props.post.thumb_art)} alt={props.post.title} />
-                </div>
                 <div className="trend-bottom-cap">
                     {/* {
                         Categories
@@ -26,4 +22,4 @@ function PostCardClassic (props) {
     )
 }
 
-export default PostCardClassic;
+export default PostCardText;

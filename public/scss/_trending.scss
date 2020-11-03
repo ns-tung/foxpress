@@ -1,7 +1,6 @@
 .trending-area {
    
     .trending-main {
-        border-bottom: 1px solid #eeeeee;
         
         // trending top
         .trending-top {
@@ -15,7 +14,7 @@
                     height: 100%;
                     bottom: 0;
                     content: "";
-                    opacity: .1;
+                    opacity: .6;
                     @extend %overlay;
                     @include transition(.3s);
                 }
@@ -94,9 +93,7 @@
                     }
 
                     h4 {      
-                        font-size: 1rem; 
-                        font-weight: 500;
-                        line-height:1.4;
+                        font-size: 1rem;
                         @include transition(.3s);
                         @media #{$lg} {
                             font-size: 16px;
@@ -136,20 +133,25 @@
         
         }
         .trand-right-single {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid#eee;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: $section_bg;
             &:last-child {
                 border-bottom: 0;
             }
-            &:hover {
-                h4 {
-                    color: $theme-color;
+            .trand-right-img {
+                overflow: hidden;
+                img {
+                    @include transition(.3s);
                 }
             }
-            .trand-right-img {
+            &:hover {
                 img {
-                    border-radius: 6px;
+                    transform: scale(1.1);
+                }
+                h3 {
+                    color: $theme-color;
                 }
             }
             .trand-right-cap {
@@ -161,16 +163,12 @@
                         top: 7px;
                     }
                 }
-                
-                h4 {     
-                    font-size: .875rem; 
-                    font-weight: 700;
-                    line-height:1.4;
+                h3 {
+                    @include transition(.3s);
                     @media #{$lg}{
                         font-size: 1rem;
                     }
                 }
-
                 time {
                     display: block;
                     color: $body-text-color;

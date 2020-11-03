@@ -2,7 +2,7 @@ import React from 'react';
 
 function SideBarContainer() {
     return (
-        <div className="about-area">
+        <div className="about-area position-sticky">
             {/* Section Tittle */}
             <div className="section-tittle mb-30">
                 <h3>Follow Us</h3>

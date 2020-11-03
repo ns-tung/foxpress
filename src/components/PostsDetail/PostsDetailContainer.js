@@ -11,6 +11,7 @@ class PostsDetailContainer extends React.Component {
             error: null,
             isLoaded: false,
             postId: "",
+            catName: "",
             postDetail: {}
         };
     }
@@ -18,6 +19,15 @@ class PostsDetailContainer extends React.Component {
     UNSAFE_componentWillMount() {
         let getIdSlug = this.props.match.params.slug.match(/[\w-]{1,}-(.*)/)[1];
         this.setState({ postId: this.props.catName+"/"+getIdSlug });
+    }
+
+    getImages() {
+        document.querySelectorAll('img').forEach(e => {
+            let lazy = e.getAttribute('loading');
+            if (lazy === 'lazy') {
+                e.src = e.getAttribute('data-src');
+            }
+        })
     }
 
     componentDidMount() {
@@ -28,18 +38,22 @@ class PostsDetailContainer extends React.Component {
             .then(res => res.json())
             .then(
                 (result) => {
+                    let getIdSlug = this.props.match.params.slug.match(/[\w-]{1,}-(.*)/)[1];
                     this.setState({
                         isLoaded: true,
-                        postDetail: result.data
+                        catName: result.data.categoryName,
+                        postId: this.state.catName+getIdSlug,
+                        postDetail: result.data,
                     });
-            },
-            (error) => {
-              this.setState({
-                isLoaded: true,
-                error
-              });
-            }
-        )
+                    this.getImages();
+                },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
     }
 
     render() {
@@ -47,9 +61,9 @@ class PostsDetailContainer extends React.Component {
             <>
                 <Helmet defer={false}>
                     <meta name="description" content={this.state.postDetail.title} />
-                    <title>{this.state.postDetail.title+' – FoxPress News'}</title>
+                    <title>{ this.state.postDetail.title+' – FoxPress News' }</title>
                 </Helmet>
-                <main className="my-5">
+                <main className="py-5 post-detail">
                     {/* About US Start */}
                     <div className="container">
                         <div className="row">
@@ -67,10 +81,9 @@ class PostsDetailContainer extends React.Component {
                                             <time>{this.state.postDetail.time}</time>
                                         </div>
                                         <div className="about-prea" dangerouslySetInnerHTML={{__html:this.state.postDetail.article}} />
-                                        <hr />
                                         <div className="social-share">
                                                 <div className="section-tittle">
-                                                <h3 className="mr-20">Chia sẻ:</h3>
+                                                <p className="mr-20 mb-0 font-weight-bold">Chia sẻ:</p>
                                                 <ul>
                                                     <li>
                                                         <a href="/"><img className="img-fluid" src="img/news/icon-fb.png" alt="" /></a>
@@ -89,15 +102,22 @@ class PostsDetailContainer extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <BoxCommentForm />
                             </div>
-                            <div className="col-12 col-md-4">
+                            <div className="col-12 col-md-4 side-bar">
                                 <SideBarContainer />
                             </div>
                         </div>
                     </div>
                     {/* About US End */}
                 </main>
+                <div className="container post-comment pb-80 pt-80">
+                    <div className="row">
+                        <div className="col-12 col-md-8">
+                            <BoxCommentForm />
+                        </div>
+                        <div className="col-12 col-md-4"></div>
+                    </div>
+                </div>
             </>
         );
     }

@@ -1,4 +1,5 @@
 import React from 'react';
+import convertSizeImageUrl from '../../helper/convertSizeImageUrl';
 import Categories from '../Categories/CategoriesList';
 
 function PostCardOverlay (props) {
@@ -39,7 +40,7 @@ function PostCardOverlay (props) {
         <div className="trending-top mb-30">
             <a href={to_slug(props.post.title)+"-"+props.post._id+".html"}>
                 <div className="trend-top-img">
-                    <img className="img-fluid w-100" src={props.post.thumb_art} alt={props.post.title} />
+                    <img className="img-fluid w-100" src={convertSizeImageUrl.toFull(props.post.thumb_art)} alt={props.post.title} />
                     <div className="trend-top-cap w-100">
                         {
                             Categories
