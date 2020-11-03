@@ -1,60 +1,33 @@
 import React from 'react';
+import generateLink from '../../helper/generateLink';
+import convertSizeImageUrl from '../../helper/convertSizeImageUrl';
 // import Categories from '../Categories/CategoriesList';
 
 function PostCardHorizontal(props) {
-
-    function to_slug(str){
-        // Chuyển hết sang chữ thường
-        str = str.toLowerCase();     
-    
-        // xóa dấu
-        str = str.replace(/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/g, 'a');
-        str = str.replace(/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/g, 'e');
-        str = str.replace(/(ì|í|ị|ỉ|ĩ)/g, 'i');
-        str = str.replace(/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/g, 'o');
-        str = str.replace(/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/g, 'u');
-        str = str.replace(/(ỳ|ý|ỵ|ỷ|ỹ)/g, 'y');
-        str = str.replace(/(đ)/g, 'd');
-    
-        // Xóa ký tự đặc biệt
-        str = str.replace(/([^0-9a-z-\s])/g, '');
-    
-        // Xóa khoảng trắng thay bằng ký tự -
-        str = str.replace(/(\s+)/g, '-');
-    
-        // Xóa phần dư - ở đầu
-        str = str.replace(/^-+/g, '');
-
-        // Thay thế --- ở giữa
-        str = str.replace(/(---)/g, '-');
-    
-        // Xóa phần dư - ở cuối
-        str = str.replace(/-+$/g, '');
-    
-        // return
-        return str;
-    }
     
     return (
         <div className="trand-right-single d-flex">
-            <a href={to_slug(props.post.title)+"-"+props.post._id+".html"}>
-                <div className="row">
-                        <div className="col-5">
-                            <div className="trand-right-img">
-                                <img className="img-fluid w-100" src={props.post.thumb_art} alt={props.post.title} />
+            <a href={generateLink( props.post.title, props.post._id )}>
+                <div className="container">
+                    <div className="row">
+                            <div className="col-12 px-0 col-md-6 pl-md-0">
+                                <div className="trand-right-img">
+                                    <img className="img-fluid w-100" src={convertSizeImageUrl.toFull(props.post.thumb_art)} alt={props.post.title} />
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-7 pl-0">
-                            <div className="trand-right-cap">
-                                {/* {
-                                    Categories
-                                        .filter(e => e.categoryName === props.post.categoryName)
-                                        .map((e,index) => <span className="category" key={index}>{e.name}</span>)
-                                } */}
-                                <time>{props.post.time}</time>
-                                <h4>{props.post.title}</h4>
+                            <div className="col-12 col-md-6 px-md-4">
+                                <div className="trand-right-cap py-4">
+                                    {/* {
+                                        Categories
+                                            .filter(e => e.categoryName === props.post.categoryName)
+                                            .map((e,index) => <span className="category" key={index}>{e.name}</span>)
+                                    } */}
+                                    <h3>{props.post.title}</h3>
+                                    <time>{props.post.time}</time>
+                                    <p>{props.post.description}</p>
+                                </div>
                             </div>
-                        </div>
+                    </div>
                 </div>
             </a>
         </div>

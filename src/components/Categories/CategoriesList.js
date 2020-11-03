@@ -1,6 +1,6 @@
 let Categories = [
     {
-        "type": "/moi-nhat",
+        "type": "/cap-nhat",
         "categoryName": "Trangnhat",
         "name": "Cập nhật"
     },
@@ -44,16 +44,16 @@ let Categories = [
         "categoryName": "Suckhoe",
         "name": "Sức khỏe"
     },
-    // {
-    //     "type": "/doi-song",
-    //     "categoryName": "Doisong",
-    //     "name": "Đời sống"
-    // },
-    // {
-    //     "type": "/du-lich",
-    //     "categoryName": "Dulich",
-    //     "name": "Du lịch"
-    // },
+    {
+        "type": "/doi-song",
+        "categoryName": "Doisong",
+        "name": "Đời sống"
+    },
+    {
+        "type": "/du-lich",
+        "categoryName": "Dulich",
+        "name": "Du lịch"
+    },
     {
         "type": "/khoa-hoc",
         "categoryName": "Khoahoc",
@@ -64,16 +64,16 @@ let Categories = [
         "categoryName": "Xe",
         "name": "Xe"
     },
-    // {
-    //     "type": "/y-kien",
-    //     "categoryName": "Ykien",
-    //     "name": "Ý kiến"
-    // },
-    // {
-    //     "type": "/cuoi",
-    //     "categoryName": "Cuoi",
-    //     "name": "Cười"
-    // }
+    {
+        "type": "/y-kien",
+        "categoryName": "Ykien",
+        "name": "Ý kiến"
+    },
+    {
+        "type": "/cuoi",
+        "categoryName": "Cuoi",
+        "name": "Cười"
+    }
 ]
 
 export default Categories;

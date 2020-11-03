@@ -123,11 +123,12 @@
     
                     a {
                         color: #002e5b;
-                        font-weight: 600;
+                        font-weight: 700;
                         margin-top: -2px;
                         padding: 1rem 1rem 1rem 0;
                         display: block;
                         font-size: .875rem;
+                        white-space: nowrap;
                         @include transition(.3s);
                         text-transform: capitalize;
                         &.active { color: $theme-color }
@@ -180,6 +181,16 @@
                             }
                         }
                     }
+                    &.cap-nhat {
+                        opacity: 0;
+                        visibility: hidden;
+                        margin-right: 0;
+                        width: 0;
+                        @include transition(.3s);
+                        a {
+                            padding: 0;
+                        }
+                    }
                 }
                 ul.submenu{
                     position: absolute;
@@ -230,24 +241,44 @@
 
 // header Sticky Responsive
 .header-sticky {
-    ul li a {
-        padding: .625rem 0;
-    }
     &.sticky-bar.sticky {
         .header-flex{
             justify-content: space-between;
         }
         .main-menu {
-            ul>li {
-                &:first-child {
-                    a {
-                        i.far {
-                            display: none;
-                            @include transition(.3s);
+            ul {
+                justify-content: space-between !important;
+                li {
+                    &:first-child {
+                        a {
+                            i.far {
+                                display: none;
+                                @include transition(.3s);
+                            }
+                            i.fox-press {
+                                display: block;
+                                @include transition(.3s);
+                            }
                         }
-                        i.fox-press {
-                            display: block;
-                            @include transition(.3s);
+                    }
+                    &.cap-nhat {
+                        opacity: 1;
+                        visibility: visible;
+                        margin-right: 1rem;
+                        width: initial;
+                        @include transition(.3s);
+                        a {
+                            padding: 1rem 1rem 1rem 0;
+                            color: $theme-color;
+                        }
+                        &::after {
+                            content: '';
+                            width: 1px;
+                            height: 14px;
+                            background: #e5e5e5;
+                            position: absolute;
+                            top: 18px;
+                            right: 0;
                         }
                     }
                 }

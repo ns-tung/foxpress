@@ -68,15 +68,15 @@ class HeaderContainer extends React.Component {
                                     {/* Main-menu */}
                                     <div className="main-menu d-none d-md-block">
                                         <nav>
-                                            <ul id="navigation" className="d-flex align-items-center">
-                                                <li>
+                                            <ul id="navigation" className="d-flex justify-content-start align-items-center">
+                                                <li className="trang-chu" title="Trang Chủ">
                                                     <NavLink activeClassName="active" className="m-0" to="/">
                                                         <i className="far fa-home-lg-alt" />
                                                         <i className="fox-press" />
                                                         <span className="ml-2 d-md-none">Trang Chủ</span>
                                                     </NavLink>
                                                 </li>
-                                                { Categories.map((e, index) => (<li key={index}><NavLink activeClassName="active" to={e.type}>{e.name}</NavLink></li>)) }
+                                                { Categories.map((e, index) => (<li key={index} className={e.type.substring(1)} title={e.name}><NavLink activeClassName="active" to={e.type}>{e.name}</NavLink></li>)) }
                                             </ul>
                                         </nav>
                                     </div>

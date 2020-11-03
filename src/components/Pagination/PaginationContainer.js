@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import ReactPaginate from 'react-paginate';
 import $ from 'jquery';
@@ -24,7 +24,7 @@ export class CommentList extends Component {
   }
 }
 
-export class App extends Component {
+class App extends Component {
   static propTypes = {
     url: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
@@ -65,6 +65,7 @@ export class App extends Component {
   }
 
   handlePageClick = (data) => {
+    console.log(data, this.props.perPage)
     let selected = data.selected;
     let offset = Math.ceil(selected * this.props.perPage);
 
@@ -95,7 +96,4 @@ export class App extends Component {
   }
 }
 
-ReactDOM.render(
-  <App url={'/comments'} author={'adele'} perPage={10} />,
-  document.getElementById('react-paginate')
-);
+export default App

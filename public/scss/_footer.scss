@@ -4,7 +4,7 @@
         margin-bottom:40px;
     }
     .footer-pera{
-        & p{
+        p{
             color:#a8a8a8;
 
             font-size: 15px;
@@ -16,21 +16,21 @@
         }
     }
     .footer-tittle{
-        & h4{
+        h4{
             color: $white;
             font-size: 20px;
             margin-bottom: 29px;
-            font-weight: 500;
+            font-weight: 700;
             text-transform: capitalize;
         }
         p{
             color:#a8a8a8;
         }
-        & ul{
-            & li{
+        ul{
+            li{
                 color: #012f5f;
                 margin-bottom: 15px;
-                & a{
+                a{
                     color: #333333;
                     font-weight: 300;
                     &:hover{
@@ -45,9 +45,9 @@
     // Form
     .footer-form{
         margin-top: 40px;
-        & form{
+        form{
             position: relative;
-            & input{
+            input{
                 width: 100%;
                 height: 43px;
                 border: 0;
@@ -55,8 +55,8 @@
                 border-bottom: 1px solid #403f3f;
                 background: none;
             }
-            & .form-icon{
-                & button{
+            .form-icon{
+                button{
                     position: absolute;
                     top: 0;
                     right: -20px;
@@ -92,16 +92,18 @@
     // Instagram\
     .insta-feed{
         padding-top: 5px;
-        margin: -2px;
-        
         display: flex;
         flex-wrap: wrap;
-    
         li {
-            width: 29.33%;
-            margin: 2px;
-            img{
-                width: 100%;
+            width: calc((100% - 20px) / 3);
+            margin: 0 10px 10px 0;
+            flex: auto;
+            &:nth-child(3),
+            &:nth-child(6) {
+                margin-right: 0;
+            }
+            img {
+                border-radius: 10px;
             }
           }
         }
@@ -187,14 +189,15 @@
                 &::before{
                     position: absolute;
                     content: "";
-                    width: 38px;
-                    height: 3px;
+                    width: 40px;
+                    height: 4px;
                     background: $theme-color;
-                    top: -50px;
                     top: -24px;
-                    left: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
                 }
                 &:hover{
+                    cursor: text;
                     color: $theme-color;
                 }
             }
@@ -210,14 +213,24 @@
             letter-spacing: 2px;
         }
     }
+    .previous, .next {
+        &.disabled {
+            cursor: not-allowed;
+            a, span {
+                color: $gray-color;
+                cursor: not-allowed;
+            }
+        }
+    }
 }
 
 .single-wrap span[class^="flaticon-"],
 .single-wrap span[class*=" flaticon-"] {
+    top: -10px;
     font-size: 24px;
+    font-weight: bold;
     color: $theme-color;
     position: relative;
-    top: -4px;
 }
 
 .flaticon-left:before {
