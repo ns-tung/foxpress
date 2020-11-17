@@ -106,13 +106,21 @@ span.category {
     position: relative;
     &::before {
         position: absolute;
-        left: 24px;
-        top: 8px;
+        left: 8px;
+        top: 7px;
         width: 14px;
         height: 14px;
         border-radius: 40px;
         content: "";
         background-color: $theme-color;
+    }
+}
+
+.post-date {
+    font-size: .75rem;
+    margin-bottom: .75rem;
+    time {
+        color: $gray-color-2;
     }
 }
 

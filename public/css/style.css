@@ -201,11 +201,7 @@ h6 {
 
 p {
   font-family: "Nunito Sans", sans-serif;
-  color: #506172;
-  font-size: 16px;
-  line-height: 30px;
-  margin-bottom: 15px;
-  font-weight: 400;
+  color: #111111;
 }
 
 .bg-img-1 {
@@ -310,10 +306,7 @@ li {
 }
 
 hr {
-  border-bottom: 1px solid #e5e5e5;
-  border-top: 0 none;
-  margin: 30px 0;
-  padding: 0;
+  border-color: #e5e5e5;
 }
 
 /* Theme-overlay */
@@ -2719,6 +2712,7 @@ hr {
 }
 .mobile_menu .slicknav_menu .slicknav_nav a {
   margin: 0;
+  padding: 10px;
 }
 .mobile_menu .slicknav_menu .slicknav_nav a:hover {
   background: transparent;
@@ -2809,6 +2803,18 @@ hr {
   margin: 0;
   text-align: justify;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 1200px) and (max-width: 1600px) {
+  .trending-area .trending-main .trending-bottom .row.post-card-text [class^=col-]:not(:last-child) {
+    border-right: 2px solid #e5e5e5;
+  }
+}
+.trending-area .trending-main .trending-bottom .row .card:not(:last-child) {
+  border-bottom: 1px solid #e5e5e5 !important;
+}
+.trending-area .trending-main .trending-bottom .row .card a:hover .card-title {
+  transition: all 0.3 cubic-bezier(0.7, 1, 0.7, 1) 0s;
+  color: #fd2952;
+}
 .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-img {
   overflow: hidden;
   border-radius: 8px;
@@ -2832,15 +2838,6 @@ hr {
   .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap h4 {
     font-size: 16px;
   }
-}
-.trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap .post-date {
-  font-size: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-.trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap .post-date time {
-  position: relative;
-  display: inline;
-  color: #111111;
 }
 .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-cap p {
   line-height: 2;
@@ -2884,17 +2881,9 @@ hr {
   left: 8px;
   top: 7px;
 }
-.trending-area .trending-main .trand-right-single .trand-right-cap h3 {
-  transition: all 0.3s cubic-bezier(0.7, 1, 0.7, 1) 0s;
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .trending-area .trending-main .trand-right-single .trand-right-cap h3 {
-    font-size: 1rem;
-  }
-}
 .trending-area .trending-main .trand-right-single .trand-right-cap time {
   display: block;
-  color: #555;
+  color: #555555;
   font-size: 0.75rem;
   margin-bottom: 0.75rem;
 }
@@ -3444,10 +3433,6 @@ hr {
 .about-area time {
   font-size: 0.875rem;
 }
-.about-area .about-right span.category::before {
-  left: 8px;
-  top: 7px;
-}
 .about-area .about-right .about-prea > ul, .about-area .about-right .about-prea .list_link {
   display: none;
 }
@@ -3751,7 +3736,7 @@ hr {
 }
 
 .blog_area a {
-  color: #506172 !important;
+  color: #111111 !important;
   text-decoration: none;
   transition: 0.4s;
 }
@@ -5129,13 +5114,21 @@ span.category {
 }
 span.category::before {
   position: absolute;
-  left: 24px;
-  top: 8px;
+  left: 8px;
+  top: 7px;
   width: 14px;
   height: 14px;
   border-radius: 40px;
   content: "";
   background-color: #fd2952;
+}
+
+.post-date {
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.post-date time {
+  color: #333333;
 }
 
 b,
