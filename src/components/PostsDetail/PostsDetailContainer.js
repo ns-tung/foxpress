@@ -20,7 +20,7 @@ class PostsDetailContainer extends React.Component {
         let getIdSlug = this.props.match.params.slug.match(/[\w-]{1,}-(.*)/)[1];
         this.setState({ postId: this.props.catName+"/"+getIdSlug });
     }
-
+    
     getImages() {
         document.querySelectorAll('img').forEach(e => {
             let lazy = e.getAttribute('loading');
@@ -29,31 +29,31 @@ class PostsDetailContainer extends React.Component {
             }
         })
     }
-
+    
     componentDidMount() {
 
+        let getIdSlug = this.props.match.params.slug.match(/[\w-]{1,}-(.*)/)[1];
         let apiUrl = "https://45.76.179.13:4043/api/articles/"+this.state.postId;
 
         fetch(apiUrl)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    let getIdSlug = this.props.match.params.slug.match(/[\w-]{1,}-(.*)/)[1];
-                    this.setState({
-                        isLoaded: true,
-                        catName: result.data.categoryName,
-                        postId: this.state.catName+getIdSlug,
-                        postDetail: result.data,
-                    });
-                    this.getImages();
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-                }
-            )
+        .then(res => res.json())
+        .then(
+            result => {
+                this.setState({
+                    isLoaded: true,
+                    catName: result.data.cat,
+                    postId: this.state.catName+getIdSlug,
+                    postDetail: result.data,
+                });
+                this.getImages();
+            },
+            error => {
+                this.setState({
+                    isLoaded: true,
+                    error
+                })
+            }
+        )
     }
 
     render() {
@@ -119,7 +119,7 @@ class PostsDetailContainer extends React.Component {
                     </div>
                 </div>
             </>
-        );
+        )
     }
 }
 

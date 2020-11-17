@@ -5,6 +5,7 @@ import PostCardClassic from '../PostCard/PostCardClassic';
 import PostCardHorizontal from '../PostCard/PostCartHorizontal';
 import Categories from '../Categories/CategoriesList';
 import PostCardText from '../PostCard/PostCardText';
+import generateLink from '../../helper/generateLink';
 
 class CategoryContainer extends React.Component {
 
@@ -14,6 +15,7 @@ class CategoryContainer extends React.Component {
             error: null,
             isLoaded: false,
             catName: "",
+            catType: "",
             nameCategory: "",
             apiUrl: "",
             items: [],
@@ -28,7 +30,11 @@ class CategoryContainer extends React.Component {
         this.setState({ 
             offset,
             apiUrl: "https://45.76.179.13:4043/api/articles/" + this.state.catName + "?limit=10&page=" + (selected + 1)
-        }, () => { this.loadArticles(); this.addZero() });
+        }, () => {
+            this.addZero();
+            this.loadArticles();
+            window.scroll({top: 0, behavior: "smooth"});
+        });
     };
 
     // Callback loadArticles when not use componentWillMount ---
@@ -37,6 +43,7 @@ class CategoryContainer extends React.Component {
             .filter(e => e.type === this.props.match.url)
             .map(e => this.setState({ 
                 catName: e.categoryName,
+                catType: e.type,
                 nameCategory: e.name,
                 apiUrl: "https://45.76.179.13:4043/api/articles/" + e.categoryName + "?limit=10&page=1"
             }));
@@ -48,8 +55,6 @@ class CategoryContainer extends React.Component {
         let apiUrl = this.state.apiUrl;
 
         fetch(apiUrl).then(res => res.json()).then((result) => {
-                // let listPost = [];
-                // listPost = result.data.articles;
                 this.setState({
                     isLoaded: true,
                     pages: result.data.pages,
@@ -63,7 +68,10 @@ class CategoryContainer extends React.Component {
         let pageLink = document.getElementsByClassName("page-link");
         let i;
         for (i = 0; i < pageLink.length; i++) {
-            Number(pageLink[i].innerText) < 10 && pageLink[i].innerHTML.length < 2 ? pageLink[i].innerHTML="0"+pageLink[i].innerText : pageLink[i].innerHTML=pageLink[i].innerText;
+            Number(pageLink[i].innerText) < 10
+            && pageLink[i].innerHTML.length < 2
+            ? pageLink[i].innerHTML="0"+pageLink[i].innerText
+            : pageLink[i].innerHTML=pageLink[i].innerText;
         }
     }
 
@@ -83,30 +91,34 @@ class CategoryContainer extends React.Component {
 
         // Callback loadArticles when not use componentWillMount ---
         this.loadArticles();
+        window.scroll({top: 0, behavior: "smooth"});
     }
 
     render() {
-        // const { articles: listArticles, pages = 1 } = this.props.articles;
-        // const categoryName = this.props.categoryName;
-        // const firstArticle = listArticles.length && listArticles[0];
-        // if (firstArticle) firstArticle.thumb_art = convertSizeImageUrl.toFull(firstArticle.thumb_art);
-        // const ortherArticles = listArticles.slice(1);
         return (
             <>
                 <Helmet defer={false}>
                     <meta name="description" content={this.state.nameCategory} />
                     <title>{this.state.nameCategory+' – FoxPress News'}</title>
                 </Helmet>
-                <main className="trending-area my-5">
+                <main className={"trending-area my-5 fp-"+`${this.state.catType.substring(1)}`}>
                     <div className="trending-main">
                         <div className="container">
                             <div className="row">
                                 <div className="col">
-                                    { this.state.items && this.state.items.length ? this.state.items.splice(0,1).map( e => <PostCardHorizontal key={e._id} post={e} />) : <div className="row"><div className="col"><p className="theme-color">No data posts</p></div></div> }
+                                    {
+                                        this.state.items.length
+                                            ? this.state.items.splice(0,1).map(
+                                                e => <a key={e._id} href={generateLink(e.title, e._id)}><PostCardHorizontal post={e} /></a>
+                                            )
+                                            : <div className="row"><div className="col"><p className="theme-color">Loading . . .</p></div></div>
+                                    }
                                     <div className="trending-bottom">
-                                        <div className="row">
+                                        <div className="row post-card-text">
                                             {
-                                                this.state.items && this.state.items.length ? this.state.items.splice(0,3).map( e => <div key={e._id} className="col-12 col-sm-6 col-md-4 mb-30"><PostCardText post={e} /></div> ) : <div className="col"><p className="theme-color">No data posts</p></div>
+                                                this.state.items.length
+                                                    ? this.state.items.splice(0,3).map( e => <div key={e._id} className="col-12 col-sm-6 col-md-4 mb-30"><PostCardText post={e} /></div> )
+                                                    : <div className="col"><p className="theme-color">Loading . . .</p></div>
                                             }
                                         </div>
                                     </div>
@@ -114,7 +126,9 @@ class CategoryContainer extends React.Component {
                                     <div className="trending-bottom pt-30">
                                         <div className="row">
                                             {
-                                                this.state.items && this.state.items.length ? this.state.items.map( e => <div key={e._id} className="col-12 col-sm-6 col-md-4 mb-30"><PostCardClassic post={e} /></div> ) : <div className="col"><p className="theme-color">No data posts</p></div>
+                                                this.state.items.length
+                                                    ? this.state.items.map( e => <div key={e._id} className="col-12 col-sm-6 col-md-4 mb-30"><PostCardClassic post={e} /></div> )
+                                                    : <div className="col"><p className="theme-color">Loading . . .</p></div>
                                             }
                                         </div>
                                     </div>

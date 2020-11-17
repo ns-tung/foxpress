@@ -1,18 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
 import Categories from '../Categories/CategoriesList';
 
 class HeaderContainer extends React.Component {
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         error: null,
-    //         isLoaded: false,
-    //         categories: CategoriesList
-    //     }
-    // }
 
     render() {
         return (
@@ -46,12 +36,12 @@ class HeaderContainer extends React.Component {
                                 {/* Logo */}
                                 <div className="col-xl-3 col-lg-3 col-md-3">
                                     <div className="logo">
-                                        <a href="/"><img className="img-fluid" src="img/logo/logo.svg" alt="" /></a>
+                                        <a href="/"><img className="img-fluid" src="img/logo/logo.svg" alt="FoxPress Logo" /></a>
                                     </div>
                                 </div>
                                 <div className="col-xl-9 col-lg-9 col-md-9">
                                     <div className="header-banner f-right ">
-                                        <img className="img-fluid" src="img/hero/header_card.jpg" alt="" />
+                                        <img className="img-fluid" src="img/hero/header_card.jpg" alt="Ads Banner" />
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +53,7 @@ class HeaderContainer extends React.Component {
                                 <div className="col-12 header-flex">
                                     {/* sticky */}
                                     <div className="sticky-logo w-100 info-open">
-                                        <a href="/"><img className="img-fluid w-25" src="img/logo/logo.svg" alt="" /></a>
+                                        <a href="/"><img className="img-fluid w-25" src="img/logo/logo.svg" alt="FoxPress Logo" /></a>
                                     </div>
                                     {/* Main-menu */}
                                     <div className="main-menu d-none d-md-block">
@@ -76,7 +66,14 @@ class HeaderContainer extends React.Component {
                                                         <span className="ml-2 d-md-none">Trang Chủ</span>
                                                     </NavLink>
                                                 </li>
-                                                { Categories.map((e, index) => (<li key={index} className={e.type.substring(1)} title={e.name}><NavLink activeClassName="active" to={e.type}>{e.name}</NavLink></li>)) }
+                                                {
+                                                    Categories.map((e, index) => (
+                                                            <li key={index} className={e.type.substring(1)} title={e.name}>
+                                                                <NavLink activeClassName="active" to={e.type}>{e.name}</NavLink>
+                                                            </li>
+                                                        )
+                                                    )
+                                                }
                                             </ul>
                                         </nav>
                                     </div>

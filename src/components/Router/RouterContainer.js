@@ -11,7 +11,6 @@ class RouterContainer extends React.Component {
         return (
             <Switch>
                 <Route exact path="/" component={HomeContainer} />
-                <Route path="/chi-tiet" component={PostsDetailContainer} />
                 { Categories.map((e,index) => <Route key={index} path={e.type} component={CategoryContainer} />) }
                 <Route path="/:slug.html" component={PostsDetailContainer} />
                 <Route component={NotFoundContainer} />

@@ -74,6 +74,26 @@
         }
         // trending Bottom
         .trending-bottom {
+            .row {
+                &.post-card-text {
+                    [class^="col-"]:not(:last-child) {
+                        @media #{$md}, #{$lg}, #{$laptop} {
+                            border-right: 2px solid $hr-border-color;
+                        }
+                    }
+                }
+                .card {
+                    &:not(:last-child) {
+                        border-bottom: 1px solid $hr-border-color !important;
+                    }
+                    a:hover {
+                        .card-title {
+                            @include transition(.3);
+                            color: $theme-color;
+                        }
+                    }
+                }
+            }
             .single-bottom {
                 .trend-bottom-img {
                     overflow: hidden;
@@ -97,16 +117,6 @@
                         @include transition(.3s);
                         @media #{$lg} {
                             font-size: 16px;
-                        }
-                    }
-
-                    .post-date {
-                        font-size: .75rem;
-                        margin-bottom: .75rem;
-                        time {
-                            position: relative;
-                            display: inline;
-                            color: $black;
                         }
                     }
 
@@ -161,12 +171,6 @@
                     &::before {
                         left: 8px;
                         top: 7px;
-                    }
-                }
-                h3 {
-                    @include transition(.3s);
-                    @media #{$lg}{
-                        font-size: 1rem;
                     }
                 }
                 time {
