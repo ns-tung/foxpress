@@ -99,9 +99,9 @@ class CategoryContainer extends React.Component {
             <>
                 <Helmet defer={false}>
                     <meta name="description" content={this.state.nameCategory} />
-                    <title>{this.state.nameCategory+' – FoxPress News'}</title>
+                    <title>{`${this.state.nameCategory} – FoxPress News`}</title>
                 </Helmet>
-                <main className={"trending-area my-5 fp-"+`${this.state.catType.substring(1)}`}>
+                <main className={`trending-area my-5 fp-${this.state.catType.substring(1)}`}>
                     <div className="trending-main">
                         <div className="container">
                             <div className="row">
