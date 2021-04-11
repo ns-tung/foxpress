@@ -1,5 +1,4 @@
 import React from 'react';
-import generateLink from '../../helper/generateLink';
 import convertSizeImageUrl from '../../helper/convertSizeImageUrl';
 
 function PostCardHorizontal(props) {

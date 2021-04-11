@@ -33,7 +33,7 @@ class PostsDetailContainer extends React.Component {
     componentDidMount() {
 
         let getIdSlug = this.props.match.params.slug.match(/[\w-]{1,}-(.*)/)[1];
-        let apiUrl = "https://45.76.179.13:4043/api/articles/"+this.state.postId;
+        let apiUrl = "https://pacific-brook-34627.herokuapp.com/api/articles/"+this.state.postId;
 
         fetch(apiUrl)
         .then(res => res.json())

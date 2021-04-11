@@ -2867,10 +2867,13 @@ hr {
 .trending-area .trending-main .trand-right-single .trand-right-img img {
   transition: all 0.3s cubic-bezier(0.7, 1, 0.7, 1) 0s;
 }
+.trending-area .trending-main .trand-right-single:hover {
+  transition: all 0.3s cubic-bezier(0.7, 1, 0.7, 1) 0s;
+}
 .trending-area .trending-main .trand-right-single:hover img {
   transform: scale(1.1);
 }
-.trending-area .trending-main .trand-right-single:hover h3 {
+.trending-area .trending-main .trand-right-single:hover h4 {
   color: #fd2952;
 }
 .trending-area .trending-main .trand-right-single .trand-right-cap span.category {

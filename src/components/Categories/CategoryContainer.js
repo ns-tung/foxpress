@@ -29,7 +29,7 @@ class CategoryContainer extends React.Component {
         let offset = Math.ceil(selected * this.props.perPage);
         this.setState({ 
             offset,
-            apiUrl: "https://45.76.179.13:4043/api/articles/" + this.state.catName + "?limit=10&page=" + (selected + 1)
+            apiUrl: "https://pacific-brook-34627.herokuapp.com/api/articles/" + this.state.catName + "?limit=10&page=" + (selected + 1)
         }, () => {
             this.addZero();
             this.loadArticles();
@@ -45,7 +45,7 @@ class CategoryContainer extends React.Component {
                 catName: e.categoryName,
                 catType: e.type,
                 nameCategory: e.name,
-                apiUrl: "https://45.76.179.13:4043/api/articles/" + e.categoryName + "?limit=10&page=1"
+                apiUrl: "https://pacific-brook-34627.herokuapp.com/api/articles/" + e.categoryName + "?limit=10&page=1"
             }));
     }
         
@@ -86,7 +86,7 @@ class CategoryContainer extends React.Component {
         //     .filter(e => e.type === this.props.match.url)
         //     .map(e => this.setState({ 
         //         catName: e.categoryName,
-        //         apiUrl: "https://45.76.179.13:4043/api/articles/" + e.categoryName + "?limit=10&page=1"
+        //         apiUrl: "https://pacific-brook-34627.herokuapp.com/api/articles/" + e.categoryName + "?limit=10&page=1"
         //     }, this.loadArticles));
 
         // Callback loadArticles when not use componentWillMount ---

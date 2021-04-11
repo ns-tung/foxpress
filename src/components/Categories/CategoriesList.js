@@ -54,11 +54,11 @@ let Categories = [
         "categoryName": "Dulich",
         "name": "Du lịch"
     },
-    {
-        "type": "/khoa-hoc",
-        "categoryName": "Khoahoc",
-        "name": "Khoa học"
-    },
+    // {
+    //     "type": "/khoa-hoc",
+    //     "categoryName": "Khoahoc",
+    //     "name": "Khoa học"
+    // },
     {
         "type": "/xe",
         "categoryName": "Xe",

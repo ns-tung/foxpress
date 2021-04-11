@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import generateLink from '../../helper/generateLink';
 import CategoryBox from '../PostCard/CategoryBox';
 import PostCardImage from '../PostCard/PostCardImage';
 import PostCardText from '../PostCard/PostCardText';
@@ -16,7 +17,7 @@ class HomeContainer extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://45.76.179.13:4043/api/articles/Trangnhat?limit=41")
+        fetch("https://pacific-brook-34627.herokuapp.com/api/articles/Trangnhat?limit=41")
         .then(res => res.json())
         .then(
             result => {
@@ -52,7 +53,7 @@ class HomeContainer extends React.Component {
                                     <div className="col">
                                         {
                                             listPost.length
-                                                ? <PostCardHorizontal post={listPost[0]} />
+                                                ? listPost.splice(0,1).map(e => <a key={e._id} href={generateLink(e.title, e._id)}><PostCardHorizontal post={e} /></a>)
                                                 : <div className="row"><div className="col"><p className="theme-color">Loading . . .</p></div></div>
                                         }
                                         <div className="trending-bottom">
