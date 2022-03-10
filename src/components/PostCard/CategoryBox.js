@@ -20,7 +20,7 @@ class CategoryBox extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://pacific-brook-34627.herokuapp.com/api/articles/post")
+        fetch("https://magnews24h.herokuapp.com/api/articles/post")
         .then(res => res.json())
         .then( 
             result => {
