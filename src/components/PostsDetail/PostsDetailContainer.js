@@ -33,7 +33,7 @@ class PostsDetailContainer extends React.Component {
     componentDidMount() {
 
         let getIdSlug = this.props.match.params.slug.match(/[\w-]{1,}-(.*)/)[1];
-        let apiUrl = "https://magnews24h.herokuapp.com/api/articles/"+this.state.postId;
+        let apiUrl = "https://magnews24h-api.netlify.app/.netlify/functions/api/articles/"+this.state.postId;
 
         fetch(apiUrl)
         .then(res => res.json())

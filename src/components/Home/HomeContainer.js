@@ -17,7 +17,7 @@ class HomeContainer extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://magnews24h.herokuapp.com/api/articles/Trangnhat?limit=41")
+        fetch("https://magnews24h-api.netlify.app/.netlify/functions/api/articles/Trangnhat?limit=41")
         .then(res => res.json())
         .then(
             result => {
