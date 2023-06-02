@@ -52,9 +52,9 @@ class HomeContainer extends React.Component {
                                 <div className="row">
                                     <div className="col">
                                         {
-                                            listPost.length
-                                                ? listPost.splice(0,1).map(e => <a key={e._id} href={generateLink(e.title, e._id)}><PostCardHorizontal post={e} /></a>)
-                                                : <div className="row"><div className="col"><p className="theme-color">Loading . . .</p></div></div>
+                                            listPost.length ?
+                                                listPost.splice(0,1).map(e => <a key={e._id} href={generateLink(e.title, e._id)}><PostCardHorizontal post={e} /></a>) :
+                                                <div className="d-flex align-items-center justify-content-center mb-5"><div className="dashed-loading"></div></div>
                                         }
                                         <div className="trending-bottom">
                                             <div className="row post-card-text">
@@ -82,7 +82,9 @@ class HomeContainer extends React.Component {
                                             <div className="row post-card-text">
                                                 <div className="col-12 col-md-4">
                                                     {
-                                                        listPost.slice(4,41).map( e => <PostCardImage key={e._id} post={e} /> )
+                                                        listPost.length ?
+                                                        listPost.slice(4,41).map( e => <PostCardImage key={e._id} post={e} /> ) :
+                                                        <div className="d-flex align-items-center justify-content-center my-5"><div className="dashed-loading"></div></div>
                                                     }
                                                 </div>
                                                 <div className="col-12 col-md-8">

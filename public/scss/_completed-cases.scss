@@ -95,13 +95,18 @@
     }
 }
 
-.single-cases-img:hover .single-cases-cap{
-    left: 0;
-    bottom: 0;
-    opacity: 1;
-    visibility: visible;
-    width: 80%;
-     right: -28%;
+.single-cases-img{
+    
+    &:hover {
+        .single-cases-cap {
+            left: 0;
+            bottom: 0;
+            opacity: 1;
+            visibility: visible;
+            width: 80%;
+            right: -28%;
+        }
+    }
 }
 
 // Another Page img width 
