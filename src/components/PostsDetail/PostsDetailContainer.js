@@ -57,11 +57,12 @@ class PostsDetailContainer extends React.Component {
     }
 
     render() {
+        let dataPost = this.state.postDetail;
         return (
             <>
                 <Helmet defer={false}>
-                    <meta name="description" content={this.state.postDetail.title} />
-                    <title>{ this.state.postDetail.title+' – FoxPress News' }</title>
+                    <meta name="description" content={dataPost.title} />
+                    <title>{ dataPost.title+' – FoxPress News' }</title>
                 </Helmet>
                 <main className="py-5 post-detail">
                     {/* About US Start */}
@@ -69,39 +70,43 @@ class PostsDetailContainer extends React.Component {
                         <div className="row">
                             <div className="col-12 col-md-8">
                                 {/* Trending Tittle */}
-                                <div className="about-area">
-                                    <div className="about-right mb-30">
-                                        {
-                                            Categories
-                                                .filter(e => e.categoryName === this.state.postDetail.categoryName)
-                                                .map((e,index) => <span key={index} className="category">{e.name}</span>)
-                                        }
-                                        <div className="section-tittle mb-20">
-                                            <h3>{this.state.postDetail.title}</h3>
-                                            <time>{this.state.postDetail.time}</time>
-                                        </div>
-                                        <div className="about-prea" dangerouslySetInnerHTML={{__html:this.state.postDetail.article}} />
-                                        <div className="social-share">
-                                                <div className="section-tittle">
-                                                <p className="mr-20 mb-0 font-weight-bold">Chia sẻ:</p>
-                                                <ul>
-                                                    <li>
-                                                        <a href="/"><img className="img-fluid" src="img/news/icon-fb.png" alt="" /></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="/"><img className="img-fluid" src="img/news/icon-ins.png" alt="" /></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="/"><img className="img-fluid" src="img/news/icon-tw.png" alt="" /></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="/"><img className="img-fluid" src="img/news/icon-yo.png" alt="" /></a>
-                                                    </li>
-                                                </ul>
+                                { dataPost ?
+                                    <div className="about-area">
+                                        <div className="about-right mb-30">
+                                            {
+                                                Categories
+                                                    .filter(e => e.categoryName === dataPost.categoryName)
+                                                    .map((e,index) => <span key={index} className="category">{e.name}</span>)
+                                            }
+                                            <div className="section-tittle mb-20">
+                                                <h3>{dataPost.title}</h3>
+                                                <time>{dataPost.time}</time>
+                                            </div>
+                                            <div className="about-prea" dangerouslySetInnerHTML={{__html:dataPost.article}} />
+                                            <div className="social-share">
+                                                    <div className="section-tittle">
+                                                    <p className="mr-20 mb-0 font-weight-bold">Chia sẻ:</p>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="/"><img className="img-fluid" src="img/news/icon-fb.png" alt="" /></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/"><img className="img-fluid" src="img/news/icon-ins.png" alt="" /></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/"><img className="img-fluid" src="img/news/icon-tw.png" alt="" /></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/"><img className="img-fluid" src="img/news/icon-yo.png" alt="" /></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    :
+                                    <div className="d-flex align-items-center justify-content-center my-5"><div className="dashed-loading"></div></div>
+                                }
                             </div>
                             <div className="col-12 col-md-4 side-bar">
                                 <SideBarContainer />

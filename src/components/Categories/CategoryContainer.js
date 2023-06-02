@@ -111,14 +111,14 @@ class CategoryContainer extends React.Component {
                                             ? this.state.items.splice(0,1).map(
                                                 e => <a key={e._id} href={generateLink(e.title, e._id)}><PostCardHorizontal post={e} /></a>
                                             )
-                                            : <div className="row"><div className="col"><p className="theme-color">Loading . . .</p></div></div>
+                                            : <div class="d-flex align-items-center justify-content-center my-5"><div class="dashed-loading"></div></div>
                                     }
                                     <div className="trending-bottom">
                                         <div className="row post-card-text">
                                             {
                                                 this.state.items.length
                                                     ? this.state.items.splice(0,3).map( e => <div key={e._id} className="col-12 col-sm-6 col-md-4 mb-30"><PostCardText post={e} /></div> )
-                                                    : <div className="col"><p className="theme-color">Loading . . .</p></div>
+                                                    : <div className="col"><div class="d-flex align-items-center justify-content-center my-5"><div class="dashed-loading"></div></div></div>
                                             }
                                         </div>
                                     </div>
@@ -128,7 +128,7 @@ class CategoryContainer extends React.Component {
                                             {
                                                 this.state.items.length
                                                     ? this.state.items.map( e => <div key={e._id} className="col-12 col-sm-6 col-md-4 mb-30"><PostCardClassic post={e} /></div> )
-                                                    : <div className="col"><p className="theme-color">Loading . . .</p></div>
+                                                    : <div className="col"><div class="d-flex align-items-center justify-content-center my-5"><div class="dashed-loading"></div></div></div>
                                             }
                                         </div>
                                     </div>

@@ -101,7 +101,7 @@ class CategoryBox extends React.Component {
                             </div>
                             <hr />
                         </Fragment>
-                    )}) : <div className="container"><div className="row"><div className="col"><p className="theme-color">Loading . . .</p></div></div></div>
+                    )}) : <div className="container"><div className="row"><div className="col"><div class="d-flex align-items-center justify-content-center my-5"><div class="dashed-loading"></div></div></div></div></div>
                 }
             </>
         )
